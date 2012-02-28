@@ -1,3 +1,4 @@
+#include <SDL\SDL_collide.h>
 #include "Bgui.h"
 #include "global.h"
 
@@ -115,4 +116,44 @@ bool Bgui::GetColorPixel(Colors& color_param, const Sint16& x_pix, const Sint16 
 		return false;
 	}
 	return pnt->GetColorPixel(color_param,x_pix,y_pix);
+}
+
+bool Bgui::CheckCollision(Bgui& oth){
+	unsigned int size_my=this->int_components.size();
+	unsigned int size_oth=oth.int_components.size();
+	Component* pmy, *poth;
+	for(register unsigned int i=0; i<size_my; i++){
+		for(register unsigned int k=0; k<size_oth; k++){
+			pmy=&this->int_components[i];
+			poth=&oth.int_components[k];
+			SDL_Rect first,second;
+
+			first.x=this->x + pmy->x_component;
+			first.y=this->y + pmy->y_component;
+			if(pmy->cut_component){
+				first.w=pmy->w_component;
+				first.h=pmy->h_component;
+			}else{
+				first.w=pmy->surf_component.Get_WSurface();
+				first.h=pmy->surf_component.Get_HSurface();
+			}
+
+			second.x=oth.x + poth->x_component;
+			second.y=oth.y + poth->y_component;
+			if(poth->cut_component){
+				second.w=poth->w_component;
+				second.h=poth->h_component;
+			}else{
+				second.w=poth->surf_component.Get_WSurface();
+				second.h=poth->surf_component.Get_HSurface();
+			}
+
+			if(SDL_CollideBoundingBox2(first, second)){
+				if(SDL_CollidePixel(pmy->surf_component,first.x,first.y,poth->surf_component,second.x,second.y)){
+					return true;
+				}
+			}
+		}
+	}
+	return false;
 }

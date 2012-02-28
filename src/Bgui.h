@@ -93,10 +93,9 @@ public:
 	Se non esiste viene ritornato un valore NULLO*/
 	MySurface* GetSurface_AtPos(const Sint16&, const Sint16&, int&);
 
-	/*Ritorna TRUE se la Bgui corrente è sovrapposta (il controllo viene fatto su tutti i componenti)
+	/*Ritorna TRUE se la Bgui corrente è sovrapposta (con pixel!) (il controllo viene fatto su tutti i componenti)
 	ad un'altra Bgui*/
-	//TODO: fare!
-	//bool CheckCollision(Bgui&);
+	bool CheckCollision(Bgui&);
 };
 
 OutVideo& operator<<(OutVideo&, Bgui&);
