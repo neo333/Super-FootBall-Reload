@@ -1,0 +1,6 @@
+
+NOTE_BUGS
+
+23/02 _ Debug Config
+	Se non presente un file, viene visualizzato il messaggio di errore sbagliato.
+	DONE.	
