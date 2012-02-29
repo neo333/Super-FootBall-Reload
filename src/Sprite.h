@@ -20,8 +20,8 @@ private:
 	MyTimer delay_frames;
 	bool anim;
 public:
-	Sprite(void):frame(0),anim(false),face(DIR_RIGHT){
-		this->Set_Delay_Frames(100);
+	Sprite(void):frame(0),anim(false),face(DIR_DOWN){
+		this->Set_Delay_Frames(130);
 	}
 
 	/*Carica un'immagine di tipo Sprite!*/
@@ -52,8 +52,3 @@ public:
 };
 
 #endif
-
-/*
-			NOTE SPRITE_GRAFICO
-		4x4 dimensioni 40x62
-*/

@@ -1,0 +1,8 @@
+DIMENSIONI DI TAGLIO_sprite1.png
+
+n_quadrant:	4x4
+Pixel:      40x62
+1_line:		DIR_DOWN
+2_line:		DIR_LEFT
+3_line:		DIR_RIGHT
+4_line:		DIR_UP

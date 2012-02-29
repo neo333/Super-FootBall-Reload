@@ -4,6 +4,7 @@
 #include "Schermata.h"
 #include "Picture.h"
 #include "Bottone.h"
+#include "Sprite.h"
 
 class MenuPrincipale: public Schermata{
 private:
