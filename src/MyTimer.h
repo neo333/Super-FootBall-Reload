@@ -32,6 +32,10 @@ public:
 		}
 		return false;
 	}
+	void Set(const Uint32& delay_param){
+		this->started=false;
+		this->delay_int=delay_param;
+	}
 };
 
 #endif
