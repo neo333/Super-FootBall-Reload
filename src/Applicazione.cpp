@@ -2,6 +2,7 @@
 #include "global.h"
 #include "Intro.h"
 #include "MenuPrincipale.h"
+#include "Game.h"
 
 Applicazione* sys_data::app_main=NULL;
 Punto sys_data::Mouse_Coordinate;
@@ -81,6 +82,7 @@ int Applicazione::Run(void){
 	this->Set_Pointer_Schermata(schermate_game::INTRO);
 	type_event::mess_event mty_event;
 	while(this->force_exit==-1){
+		this->Process_Schermate();
 		this->main_screen.DrawnBackBuffer();
 		mty_event=this->mSysEvent.UpDateEvents();
 		switch(mty_event){
@@ -93,6 +95,7 @@ int Applicazione::Run(void){
 		}
 		this->main_screen.Flip();
 		sys_data::keys_main.FlushKeys();
+
 	}
 	//CLOSE_APP
 	this->Close_All();
@@ -108,29 +111,7 @@ void Applicazione::SetError(void){
 }
 
 void Applicazione::Set_Pointer_Schermata(const schermate_game::typ_schermate& title_scene){
-	if(this->pnt_schermata){
-		this->pnt_schermata->UnLoad();
-		delete this->pnt_schermata;
-		this->pnt_schermata=NULL;
-	}
-
-	switch(title_scene){
-	case schermate_game::INTRO:
-		this->pnt_schermata=new Intro;
-		break;
-	case schermate_game::MENU_PRINCIPALE:
-		this->pnt_schermata=new MenuPrincipale;
-		break;
-	default:
-		OutRegistro(Errore_Form("1xESCENE_APP","Impossibile caricare la risorsa richiesta dal modulo!\n"
-											   "Contattare l'amministratore del software!"));
-		this->SetError();
-		break;
-	}
-
-	if(this->pnt_schermata){
-		this->pnt_schermata->Load();
-	}
+	this->sys_scherm.push_back(title_scene);
 }
 
 void Applicazione::Init_Fonts(void){
@@ -159,4 +140,40 @@ void Applicazione::Close_Sys_Sound(void){
 		this->main_sys_sound.CloseSystem();
 	}
 	sys_data::sound_main=NULL;
+}
+
+void Applicazione::Process_Schermate(void){
+	while(!this->sys_scherm.empty()){
+		this->Set_Schermate_int(this->sys_scherm.back());
+		this->sys_scherm.pop_back();
+	}
+}
+
+void Applicazione::Set_Schermate_int(const schermate_game::typ_schermate& title_scene){
+	if(this->pnt_schermata){
+		this->pnt_schermata->UnLoad();
+		delete this->pnt_schermata;
+		this->pnt_schermata=NULL;
+	}
+
+	switch(title_scene){
+	case schermate_game::INTRO:
+		this->pnt_schermata=new Intro;
+		break;
+	case schermate_game::MENU_PRINCIPALE:
+		this->pnt_schermata=new MenuPrincipale;
+		break;
+	case schermate_game::GAME:
+		this->pnt_schermata=new Game;
+		break;
+	default:
+		OutRegistro(Errore_Form("1xESCENE_APP","Impossibile caricare la risorsa richiesta dal modulo!\n"
+											   "Contattare l'amministratore del software!"));
+		this->SetError();
+		break;
+	}
+
+	if(this->pnt_schermata){
+		this->pnt_schermata->Load();
+	}
 }

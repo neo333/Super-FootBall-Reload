@@ -7,7 +7,8 @@
 namespace schermate_game{
 	enum typ_schermate{
 		INTRO,
-		MENU_PRINCIPALE
+		MENU_PRINCIPALE,
+		GAME
 	};
 }
 

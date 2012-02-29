@@ -75,6 +75,7 @@ Bottone& Bottone::operator<<(const type_event::mess_event& mEvent){
 					*sys_data::sound_main << this->snd_clic;
 					if(this->action_clic){
 						this->action_clic();
+						return *this;
 					}
 				}
 				this->SetSelect(true);

@@ -18,6 +18,7 @@ void MenuPrincipale::Load(void){
 	this->bGioca.SetX(300);
 	this->bGioca.SetY(240);
 	this->bGioca.SetText("GIOCA");
+	this->bGioca.SetAction_Clic(scripts::Set_Schermata_Game);
 	this->bExtra.Load(1);
 	this->bExtra.SetX(300);
 	this->bExtra.SetY(300);

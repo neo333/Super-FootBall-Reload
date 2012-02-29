@@ -8,6 +8,7 @@
 #include "Schermata.h"
 #include "MyFont.h"
 #include "OutSound.h"
+#include <vector>
 
 struct Punto{
 	Sint16 x;
@@ -45,6 +46,7 @@ private:
 
 	/*--------------------*/
 	Schermata* pnt_schermata;
+	std::vector<schermate_game::typ_schermate> sys_scherm;
 	/*--------------------*/
 
 	bool loaded;
@@ -63,6 +65,9 @@ private:
 	void Close_All(void);
 
 	void Set_Win_Title(void);
+
+	void Process_Schermate(void);
+	void Set_Schermate_int(const schermate_game::typ_schermate&);
 public:
 	Applicazione(void);
 	~Applicazione(void);
