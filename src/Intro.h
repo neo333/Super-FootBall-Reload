@@ -8,6 +8,7 @@ class Intro: public Schermata{
 private:
 	Picture logo_1;
 	Picture logo_2;
+	Picture logo_3;
 public:
 	int Run(const type_event::mess_event&, OutVideo&);
 	void Load(void);
