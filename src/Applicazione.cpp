@@ -115,7 +115,7 @@ void Applicazione::Set_Pointer_Schermata(const schermate_game::typ_schermate& ti
 }
 
 void Applicazione::Init_Fonts(void){
-	fonts_data::font_puls.LoadFont("Data/fonts/arial.ttf",20);
+	fonts_data::font_puls.LoadFont("Data/fonts/redrocketcond.ttf",20);
 }
 
 void Applicazione::Close_Fonts(void){
