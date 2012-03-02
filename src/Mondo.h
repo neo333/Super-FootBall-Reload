@@ -7,10 +7,13 @@
 
 class Mondo{
 private:
-	//questa funzione verrà chiamata un attimo prima del disegno a video del Mondo
-	virtual void Process(void)=0;
+	Sprite* int_MoveSprite(Sprite*);
 protected:
 	std::vector<Sprite> object;
+
+	/*Muove uno sprite del Mondo
+	PARAMETRI: indice del vettore, pixel del passo di movimento, direzione del movimento*/
+	//bool MoveSprite(const unsigned int&, const Sint16&, const Direction&);
 public:
 	Mondo(void){
 
@@ -22,6 +25,9 @@ public:
 	virtual void UnLoad(void)=0;
 	
 	friend OutVideo& operator<<(OutVideo&, Mondo&);
+
+	//questa funzione verrà chiamata un attimo prima del disegno a video del Mondo direttamente dalla schermtata Game
+	virtual void Process(const type_event::mess_event&, OutVideo&)=0;
 };
 
 OutVideo& operator<<(OutVideo&, Mondo&);

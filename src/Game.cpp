@@ -14,6 +14,7 @@ void Game::UnLoad(void){
 
 int Game::Run(const type_event::mess_event& mEvent, OutVideo& screen){
 	if(this->pLevel){
+		this->pLevel->Process(mEvent,screen);
 		screen << *this->pLevel;
 	}
 	return 0;

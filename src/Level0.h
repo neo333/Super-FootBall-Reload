@@ -5,10 +5,15 @@
 
 class Level0:public Mondo{
 private:
-	void Process(void);
+	Sprite* ctrl_key;
 public:
+	Level0(void):ctrl_key(NULL){
+
+	}
 	void Load(void);
 	void UnLoad(void);
+
+	void Process(const type_event::mess_event&, OutVideo&);
 };
 
 #endif
