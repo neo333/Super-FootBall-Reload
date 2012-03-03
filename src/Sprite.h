@@ -4,6 +4,7 @@
 #include "Bgui.h"
 #include "MyTimer.h"
 #include "MyVector.h"
+#include <set>
 
 enum Direction{
 	DIR_UP,
@@ -22,6 +23,11 @@ private:
 	bool anim;
 
 	MyVector speed;
+
+	MyRect box_collide;
+	void Load_BoxCollide(const std::string&);
+
+	std::set<Sprite*> list_collide;
 public:
 	Sprite(void):frame(0),anim(false),face(DIR_DOWN){
 		this->Set_Delay_Frames(130);
@@ -63,23 +69,35 @@ public:
 		return this->speed;
 	}
 
-	/*Sposta di 'unit'(parametro Sint16) pixel lo sprite nella direzione indicata*/
-	void Step_One(const Direction& p_dir, const Sint16& unit){
+	/*Svuota la lista delle collisioni*/
+	void Clear_ListCollide(void){
+		this->list_collide.clear();
+	}
+
+	/*Aggiunge uno sprite alla lista delle collisioni*/
+	void Add_ListCollide(Sprite* oth){
+		if(this!=oth){
+			this->list_collide.insert(oth);
+		}
+	}
+
+	/*Sposta lo sprite in una direzione del valore indicato*/
+	void Traslate_Instant(const Direction& p_dir, const Sint16& p_mov){
 		switch(p_dir){
 		case DIR_UP:
-			this->SetY(this->GetY()-unit);
+			this->SetY(this->GetY() - p_mov);
 			break;
 		case DIR_DOWN:
-			this->SetY(this->GetY()+unit);
-			break;
-		case DIR_LEFT:
-			this->SetX(this->GetX()-unit);
+			this->SetY(this->GetY() + p_mov);
 			break;
 		case DIR_RIGHT:
-			this->SetX(this->GetX()+unit);
+			this->SetX(this->GetX() + p_mov);
+			break;
+		case DIR_LEFT:
+			this->SetX(this->GetX() - p_mov);
 			break;
 		default:
-			//TODO: errore! Nessuna direzione definita!
+			//TODO: errore! direzione non valide
 			return;
 		}
 	}

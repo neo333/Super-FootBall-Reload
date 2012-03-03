@@ -7,6 +7,7 @@ void Game::Load(void){
 
 void Game::UnLoad(void){
 	if(this->pLevel){
+		this->pLevel->UnLoad();
 		delete this->pLevel;
 		this->pLevel=NULL;
 	}
@@ -14,6 +15,7 @@ void Game::UnLoad(void){
 
 int Game::Run(const type_event::mess_event& mEvent, OutVideo& screen){
 	if(this->pLevel){
+		this->pLevel->Process_MotorPhi();
 		this->pLevel->Process(mEvent,screen);
 		screen << *this->pLevel;
 	}

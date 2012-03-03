@@ -30,6 +30,7 @@ void Level0::Load(void){
 	this->object.insert(this->object.end(),1,Sprite());
 	this->object.back().Load(pg_filename);
 	this->object.back().Set_Face(DIR_RIGHT);
+	this->object.back().Set_Speed(MyVector(0,1));
 	this->ctrl_key=&this->object.back();
 }
 

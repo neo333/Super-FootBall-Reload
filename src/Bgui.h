@@ -11,18 +11,31 @@
 #include "OutVideo.h"
 #include "colors.h"
 
+class MyRect{
+public:
+	Sint16 x;
+	Sint16 y;
+	Sint16 w;
+	Sint16 h;
+
+	MyRect(const Sint16& x_p=0, const Sint16& y_p=0, const Sint16& w_p=0, const Sint16& h_p=0):x(x_p),
+		y(y_p),w(w_p),h(h_p){
+
+	}
+};
+
 struct Component{
 	MySurface surf_component;
 	Sint16 x_component;
 	Sint16 y_component;
+
 	Sint16 x_cut;
 	Sint16 y_cut;
-	Sint16 w_component;
-	Sint16 h_component;
+	Sint16 w_cut;
+	Sint16 h_cut;
 	bool cut_component;
 
-	Component(void):x_component(0),y_component(0),x_cut(0),y_cut(0),w_component(0),h_component(0),cut_component(false){
-
+	Component(void):x_component(0),y_component(0),x_cut(0),y_cut(0),w_cut(0),h_cut(0),cut_component(false){
 	}
 };
 
@@ -92,10 +105,6 @@ public:
 	Inoltre il 3 parametro è output e indica l'indice dell'array del componente della Bgui
 	Se non esiste viene ritornato un valore NULLO*/
 	MySurface* GetSurface_AtPos(const Sint16&, const Sint16&, int&);
-
-	/*Ritorna TRUE se la Bgui corrente è sovrapposta (con pixel!) (il controllo viene fatto su tutti i componenti)
-	ad un'altra Bgui*/
-	bool CheckCollision(Bgui&);
 };
 
 OutVideo& operator<<(OutVideo&, Bgui&);

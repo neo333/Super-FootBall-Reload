@@ -8,7 +8,7 @@ private:
 	Sint16 x;
 	Sint16 y;
 public:
-	MyVector(void):x(0),y(0){
+	MyVector(const Sint16& x_param=0, const Sint16& y_param=0):x(x_param),y(y_param){
 
 	}
 

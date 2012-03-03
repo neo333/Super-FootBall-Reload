@@ -7,23 +7,3 @@ OutVideo& operator<<(OutVideo& screen, Mondo& obj){
 	}
 	return screen;
 }
-
-Sprite* Mondo::int_MoveSprite(Sprite* pSprite){
-	//DA FARE!!!!
-	//motore fisico su vettore velocità!
-	register std::vector<Sprite>::iterator it;
-
-	for(int i=0; i<p; i++){
-		pSprite->Step_One(dir,1);
-		for(it=this->object.begin(); it!=this->object.end(); it++){
-			if(&(*it)!=pSprite){
-				if(pSprite->CheckCollision((*it))){
-					pSprite->Step_One(dir,-1);
-					return &(*it);
-				}
-			}
-		}
-	}
-
-	return NULL;
-}

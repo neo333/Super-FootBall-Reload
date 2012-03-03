@@ -10,16 +10,14 @@ OutVideo& operator<<(OutVideo& screen, Bgui& oth){
 	for(register unsigned int i=0; i<size; i++){
 		pointer=&oth.int_components[i];
 		if(pointer->surf_component.IsLoaded()){
-			pos.x=oth.x;
-			pos.y=oth.y;
-			pos.x+=pointer->x_component;
-			pos.y+=pointer->y_component;
+			pos.x=oth.x + pointer->x_component;
+			pos.y=oth.y + pointer->y_component;
 
 			if(pointer->cut_component){
 				cut.x=pointer->x_cut;
 				cut.y=pointer->y_cut;
-				cut.w=pointer->w_component;
-				cut.h=pointer->h_component;
+				cut.w=pointer->w_cut;
+				cut.h=pointer->h_cut;
 				OutVideo::BlitSurface(pointer->surf_component,&cut,screen,&pos);
 			}else{
 				OutVideo::BlitSurface(pointer->surf_component,NULL,screen,&pos);
@@ -91,8 +89,8 @@ MySurface* Bgui::GetSurface_AtPos(const Sint16& x_pix, const Sint16& y_pix, int&
 		w_temp=x_temp;
 		h_temp=y_temp;
 		if(pointer->cut_component){
-			w_temp+=pointer->w_component;
-			h_temp+=pointer->h_component;
+			w_temp+=pointer->w_cut;
+			h_temp+=pointer->h_cut;
 		}else{
 			w_temp+=pointer->surf_component.Get_WSurface();
 			h_temp+=pointer->surf_component.Get_HSurface();
@@ -116,44 +114,4 @@ bool Bgui::GetColorPixel(Colors& color_param, const Sint16& x_pix, const Sint16 
 		return false;
 	}
 	return pnt->GetColorPixel(color_param,x_pix,y_pix);
-}
-
-bool Bgui::CheckCollision(Bgui& oth){
-	unsigned int size_my=this->int_components.size();
-	unsigned int size_oth=oth.int_components.size();
-	Component* pmy, *poth;
-	for(register unsigned int i=0; i<size_my; i++){
-		for(register unsigned int k=0; k<size_oth; k++){
-			pmy=&this->int_components[i];
-			poth=&oth.int_components[k];
-			SDL_Rect first,second;
-
-			first.x=this->x + pmy->x_component;
-			first.y=this->y + pmy->y_component;
-			if(pmy->cut_component){
-				first.w=pmy->w_component;
-				first.h=pmy->h_component;
-			}else{
-				first.w=pmy->surf_component.Get_WSurface();
-				first.h=pmy->surf_component.Get_HSurface();
-			}
-
-			second.x=oth.x + poth->x_component;
-			second.y=oth.y + poth->y_component;
-			if(poth->cut_component){
-				second.w=poth->w_component;
-				second.h=poth->h_component;
-			}else{
-				second.w=poth->surf_component.Get_WSurface();
-				second.h=poth->surf_component.Get_HSurface();
-			}
-
-			if(SDL_CollideBoundingBox2(first, second)){
-				if(SDL_CollidePixel(pmy->surf_component,first.x,first.y,poth->surf_component,second.x,second.y)){
-					return true;
-				}
-			}
-		}
-	}
-	return false;
 }

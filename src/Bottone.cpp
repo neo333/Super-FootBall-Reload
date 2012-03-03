@@ -28,8 +28,8 @@ void Bottone::Load(const unsigned int& w_size){
 	unsigned int i;
 
 	this->GetSurface_Component(0).Load(bott_filename::bt_filename);
-	this->int_components[0].w_component=50;
-	this->int_components[0].h_component=52;
+	this->int_components[0].w_cut=50;
+	this->int_components[0].h_cut=52;
 	this->int_components[0].cut_component=true;
 
 	for(i=1; i<w_size+1; i++){
@@ -38,8 +38,8 @@ void Bottone::Load(const unsigned int& w_size){
 		this->int_components[i].y_component=0;
 		this->int_components[i].x_cut=50;
 		this->int_components[i].y_cut=0;
-		this->int_components[i].w_component=50;
-		this->int_components[i].h_component=52;
+		this->int_components[i].w_cut=50;
+		this->int_components[i].h_cut=52;
 		this->int_components[i].cut_component=true;
 	}
 
@@ -48,8 +48,8 @@ void Bottone::Load(const unsigned int& w_size){
 	this->int_components[i].y_component=0;
 	this->int_components[i].x_cut=100;
 	this->int_components[i].y_cut=0;
-	this->int_components[i].w_component=50;
-	this->int_components[i].h_component=52;
+	this->int_components[i].w_cut=50;
+	this->int_components[i].h_cut=52;
 	this->int_components[i].cut_component=true;
 
 	this->SetColorKey(-1);
