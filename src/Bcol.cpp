@@ -6,7 +6,8 @@ bool Bcol::Converted_IMAGE(const std::string& file_name_input, const std::string
 	if(file_name_input.size()==0){
 		return false;
 	}
-	MySurface image=IMG_Load(file_name_input.c_str());
+	MySurface image;
+	image=IMG_Load(file_name_input.c_str());
 	if(image.IsLoaded()==false){
 		return false;
 	}
@@ -70,7 +71,7 @@ void Bcol::Make_Rect(const int& x,const int& y, std::vector<MyRect>& list, MySur
 			exit=true;
 		}
 	}
-	ins.w=temp-x;
+	ins.w=temp-x-1;
 
 	exit=false;
 	for(temp=y;!exit && temp < h_image;temp++){
@@ -82,7 +83,7 @@ void Bcol::Make_Rect(const int& x,const int& y, std::vector<MyRect>& list, MySur
 			exit=true;
 		}
 	}
-	ins.h=temp-y;
+	ins.h=temp-y-1;
 
 	list.push_back(ins);
 }
