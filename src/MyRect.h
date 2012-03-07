@@ -2,6 +2,7 @@
 #define _MYRECT_SFR
 
 #include <SDL\SDL.h>
+#include "OutVideo.h"
 
 class MyRect{
 public:
@@ -14,6 +15,19 @@ public:
 		y(y_p),w(w_p),h(h_p){
 
 	}
+
+	operator SDL_Rect(void){
+		SDL_Rect rts;
+		rts.x=this->x;
+		rts.y=this->y;
+		rts.w=this->w;
+		rts.h=this->h;
+		return rts;
+	}
 };
+
+OutVideo& operator<<(OutVideo&, const MyRect&);
+
+
 
 #endif

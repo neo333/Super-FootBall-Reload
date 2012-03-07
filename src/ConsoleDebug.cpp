@@ -1,6 +1,7 @@
 #include "ConsoleDebug.h"
 #include "Bcol.h"
 #include <iostream>
+#include "global.h"
 
 void ConsoleDebug::Run(const std::string& cmd){
 	ConsoleDebug obj;
@@ -23,6 +24,11 @@ void ConsoleDebug::DecodeCMD(const std::string& cmd){
 		}
 		return;
 	}
+
+	if(temp_cmd=="bcol_vis"){
+		this->cmd_int.istruzione_int=ConsoleDebug::Cmd_Dec::DEBUG_BCOL_VIS;
+		return;
+	}
 }
 
 void ConsoleDebug::ZeroCmd_Int(void){
@@ -43,6 +49,15 @@ void ConsoleDebug::Exeque(void){
 		}
 		std::cout << "Operazione conclusa!\n";
 		break;
+
+	case ConsoleDebug::Cmd_Dec::DEBUG_BCOL_VIS:
+		if(sys_data::app_main->Get_Debug_Vis_Bcol()){
+			sys_data::app_main->Set_Debug_Vis_Bcol(false);
+		}else{
+			sys_data::app_main->Set_Debug_Vis_Bcol(true);
+		}
+		break;
+
 	default:
 		std::cout << "Impossibile eseguire il comando immesso!\n";
 		break;

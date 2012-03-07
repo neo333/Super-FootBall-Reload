@@ -2,6 +2,7 @@
 #include "global.h"
 #include <fstream>
 #include "Bcol.h"
+#include <SDL\SDL_collide.h>
 
 namespace dims_frames{
 	static const Sint16 wc=40;
@@ -101,4 +102,23 @@ void Sprite::Load_BoxCollide(const std::string& filename){
 	}
 
 	file.close();
+}
+
+bool Sprite::Collide_with_Sprite(const Sprite& oth) const{
+	if(SDL_CollideBoundingBox2(this->Get_Box_Collide(),oth.Get_Box_Collide())){
+		return true;
+	}
+	return false;
+}
+
+OutVideo& operator<<(OutVideo& screen, Sprite& oth){
+	screen << (Bgui&)oth;
+
+#ifdef _DEBUG
+	if(sys_data::app_main->Get_Debug_Vis_Bcol()){
+		screen << oth.Get_Box_Collide();
+	}
+#endif
+
+	return screen;
 }

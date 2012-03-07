@@ -1,6 +1,5 @@
 #include "MotorePhi.h"
 #include <math.h>
-#include <SDL\SDL_collide.h>
 
 void MotorePhi::Process(void){
 	this->MoveAll();
@@ -39,7 +38,15 @@ void MotorePhi::Force_CheckCollision(void){
 }
 
 Sprite* MotorePhi::sing_CheckCollisione_static(Sprite* pSprite){
-	//TODO: da fare funzione!
+	register std::vector<Sprite>::iterator it;
+	for(it=this->pObjs->begin(); it!=this->pObjs->end(); it++){
+		if(&(*it)!=pSprite){
+			if(pSprite->Collide_with_Sprite((*it))){
+				return &(*it);
+			}
+		}
+	}
+
 	return NULL;
 }
 
@@ -65,18 +72,18 @@ void MotorePhi::MoveAll(void){
 
 			for(Sint16 i=0; i<delay && !collide; i++){
 				if(passo){
-					(*it).Traslate_Instant(DIR_DOWN,y_step);
+					(*it).Traslate_Instant(DIR_DOWN,1);
 				}else{
-					(*it).Traslate_Instant(DIR_RIGHT,x_step);
+					(*it).Traslate_Instant(DIR_RIGHT,1);
 				}
 				ptemp=this->sing_CheckCollisione_static(&(*it));
 				if(ptemp){
 					collide=true;
 					(*it).Add_ListCollide(ptemp);
 					if(passo){
-						(*it).Traslate_Instant(DIR_DOWN,-y_step);
+						(*it).Traslate_Instant(DIR_DOWN,-1);
 					}else{
-						(*it).Traslate_Instant(DIR_RIGHT,-x_step);
+						(*it).Traslate_Instant(DIR_RIGHT,-1);
 					}
 				}
 			}

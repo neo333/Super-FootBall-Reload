@@ -25,13 +25,14 @@ private:
 
 	MyVector speed;
 
-	MyRect box_collide[4];
+	std::vector<MyRect> box_collide;
 	void Load_BoxCollide(const std::string&);
 
 	std::set<Sprite*> list_collide;
 public:
 	Sprite(void):frame(0),anim(false),face(DIR_DOWN){
 		this->Set_Delay_Frames(130);
+		this->box_collide.resize(4);
 	}
 
 	/*Carica un'immagine di tipo Sprite!*/
@@ -102,6 +103,33 @@ public:
 			return;
 		}
 	}
+
+	/*Ritorna il MyRect(Box) per la collisione (relativo allo schermo!)*/
+	MyRect Get_Box_Collide(void) const{
+		MyRect rts;
+		switch(this->face){
+		case DIR_DOWN:
+			rts=this->box_collide[0];
+			break;
+		case DIR_UP:
+			rts=this->box_collide[3];
+			break;
+		case DIR_RIGHT:
+			rts=this->box_collide[2];
+			break;
+		case DIR_LEFT:
+			rts=this->box_collide[1];
+			break;
+		}
+		rts.x+=this->GetX();
+		rts.y+=this->GetY();
+		return rts;
+	}
+
+	/*Ritorna True se due sprite collidono*/
+	bool Collide_with_Sprite(const Sprite&) const;
 };
+
+OutVideo& operator<<(OutVideo&, Sprite&);
 
 #endif

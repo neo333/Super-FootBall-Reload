@@ -8,7 +8,8 @@ private:
 	struct Cmd_Dec{
 		enum Istruzione{
 			NOT_DEFINE,
-			MAKE_BCOL_FILE
+			MAKE_BCOL_FILE,
+			DEBUG_BCOL_VIS
 		}istruzione_int;
 		std::string string1;
 
@@ -33,6 +34,9 @@ NOTA PRELIMINARE:
 COMANDI:
 	> bcol_make -f[filename]
 		esegue la conversione in file ".bcol" del file immesso come parametro
+
+	> bcol_vis
+		attiva/disattiva (switch) la visualizzazione dei Box_Collide sullo schermo
 
 */
 

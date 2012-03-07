@@ -49,6 +49,10 @@ private:
 	std::vector<schermate_game::typ_schermate> sys_scherm;
 	/*--------------------*/
 
+	/*----DEBUG-----------*/
+	bool vis_bcol_rect;
+	/*--------------------*/
+
 	bool loaded;
 	int force_exit;
 
@@ -76,6 +80,13 @@ public:
 	void SetError(void);
 	void Set_Pointer_Schermata(const schermate_game::typ_schermate&);
 	void Close_Game(void);
+
+	void Set_Debug_Vis_Bcol(const bool& fset){
+		this->vis_bcol_rect=fset;
+	}
+	const bool& Get_Debug_Vis_Bcol(void) const{
+		return this->vis_bcol_rect;
+	}
 };
 
 #endif

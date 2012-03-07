@@ -8,7 +8,7 @@ Applicazione* sys_data::app_main=NULL;
 Punto sys_data::Mouse_Coordinate;
 OutSound* sys_data::sound_main=NULL;
 
-Applicazione::Applicazione(void): SDL_main(SDL_MAIN), loaded(false), SDL_image(SDL_IMG), SDL_ttf(SDL_TTF),SDL_mix(SDL_MIX),force_exit(-1), pnt_schermata(NULL){
+Applicazione::Applicazione(void): SDL_main(SDL_MAIN), loaded(false), SDL_image(SDL_IMG), SDL_ttf(SDL_TTF),SDL_mix(SDL_MIX),force_exit(-1), pnt_schermata(NULL),vis_bcol_rect(false){
 	sys_data::app_main=this;
 }
 
