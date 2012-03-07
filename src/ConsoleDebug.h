@@ -27,7 +27,11 @@ public:
 };
 
 /*			COMANDI della console di DEBUG
-	bcol_make -f[filename]
+NOTA PRELIMINARE:
+	Per informazioni sulla console di Debug leggere il file di documentazione.
+
+COMANDI:
+	> bcol_make -f[filename]
 		esegue la conversione in file ".bcol" del file immesso come parametro
 
 */

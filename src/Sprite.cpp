@@ -94,6 +94,7 @@ void Sprite::Load_BoxCollide(const std::string& filename){
 		temp_box.w=dims_frames::wc;
 		temp_box.h=dims_frames::hc;
 		if(Bcol::Point_into_Rect((*it).x,(*it).y,temp_box)==true){
+			(*it).y-=dims_frames::hc*i;
 			this->box_collide[i]=(*it);
 			i++;
 		}

@@ -1,0 +1,25 @@
+#########################################
+#										#
+#	DOCUMENTAZIONE CONSOLE_DEBUG		#
+#			superFootballReload_app		#
+#########################################
+
+	1) INTRODUZIONE
+La console di Debug può essere avviata solamente nella configurazione DEBUG del progetto.
+Per poter entrare nella console premere il tasto F1.
+L'applicazione verrà interrotta e il focus verrà passato alla console output Registro.
+I comandi sono dichiarati nel file ConsoleDebug.h
+
+	2) COMANDO BCOL_MAKE
+Questo comando permette di convertire un'immagine in un formato .bcol.
+I file BCOL sono file data che contengono vari 'MyRect' (rettangoli) usati per le collisioni degli
+Sprite dell'applicazione.
+Quando uno Sprite viene caricato, viene cercato anche il suo rispettivo file BCOL nella cartella
+'Data/bcol/filename.bcol'. Se questo file non viene trovato i box di collisione dello sprite saranno nulli
+ed esso non sarà abilitato alle collisioni.
+	
+	2.1) ISTRUZIONI DI FUNZIONAMENTO
+Il file BCOL verrà costituito da tutti i Rettangoli di colore diverso dal colore di trasparenza
+(attualmente settato R:255,G:0,B:255) presenti nell'immagine.
+Al momento del caricamento verranno caricati all'interno dello Sprite solamente 4 dei BOX (rettangoli letti
+dal file .BCOL). I Box letti sono il primo frame di ogni DIREZIONE dello sprite.
