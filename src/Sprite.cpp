@@ -55,4 +55,18 @@ void Sprite::Process(void){
 
 void Sprite::Load_BoxCollide(const std::string& filename){
 	//TODO: da fare funzione!!
+	std::string filename_adjust=filename;
+	std::string name;
+	size_t cur;
+	do{
+		cur=filename_adjust.find('\\');
+		if(cur!=filename_adjust.npos){
+			filename_adjust.replace(cur,1,1,'/');
+		}
+	}while(cur!=filename_adjust.npos);
+	cur=filename_adjust.rfind('/');
+	name=filename_adjust.substr(cur,filename_adjust.npos);
+	filename_adjust=filename_adjust.substr(0,cur);
+	filename_adjust+="/bcol";
+	filename_adjust+=name;
 }

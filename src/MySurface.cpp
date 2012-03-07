@@ -4,6 +4,7 @@
 void MySurface::Load(const std::string& filename){
 	this->FreeSurface();
 	if(sys_data::hd_sysdata.LoadSurface_to_file(filename,*this)==false){
+		//TODO: gestire l'errore!
 		sys_data::app_main->SetError();
 	}
 }

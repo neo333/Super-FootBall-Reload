@@ -1,5 +1,6 @@
 #include "MotorePhi.h"
 #include <math.h>
+#include <SDL\SDL_collide.h>
 
 void MotorePhi::Process(void){
 	this->MoveAll();

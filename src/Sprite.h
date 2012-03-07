@@ -4,6 +4,7 @@
 #include "Bgui.h"
 #include "MyTimer.h"
 #include "MyVector.h"
+#include "MyRect.h"
 #include <set>
 
 enum Direction{
@@ -24,7 +25,7 @@ private:
 
 	MyVector speed;
 
-	MyRect box_collide;
+	MyRect box_collide[4];
 	void Load_BoxCollide(const std::string&);
 
 	std::set<Sprite*> list_collide;
