@@ -1,5 +1,7 @@
 #include "Sprite.h"
 #include "global.h"
+#include <fstream>
+#include "Bcol.h"
 
 namespace dims_frames{
 	static const Sint16 wc=40;
@@ -54,7 +56,6 @@ void Sprite::Process(void){
 }
 
 void Sprite::Load_BoxCollide(const std::string& filename){
-	//TODO: da fare funzione!!
 	std::string filename_adjust=filename;
 	std::string name;
 	size_t cur;
@@ -65,8 +66,38 @@ void Sprite::Load_BoxCollide(const std::string& filename){
 		}
 	}while(cur!=filename_adjust.npos);
 	cur=filename_adjust.rfind('/');
-	name=filename_adjust.substr(cur,filename_adjust.npos);
+	name=filename_adjust.substr(cur,filename_adjust.size()-cur-3);
+	name+="bcol";
+	cur=filename_adjust.rfind('/',cur-1);
 	filename_adjust=filename_adjust.substr(0,cur);
 	filename_adjust+="/bcol";
 	filename_adjust+=name;
+
+	std::ifstream file;
+	std::vector<MyRect> list;
+	MyRect temp_ins;
+	file.open(filename_adjust);
+	if(file.is_open()==false){
+		return;
+	}
+	while(!file.eof()){
+		file.read((char*)(&temp_ins),sizeof(MyRect));
+		list.push_back(temp_ins);
+	}
+
+	register std::vector<MyRect>::iterator it;
+	MyRect temp_box;
+	register unsigned int i=0;
+	for(it=list.begin(); it!=list.end(); it++){
+		temp_box.x=0;
+		temp_box.y=dims_frames::hc*i;
+		temp_box.w=dims_frames::wc;
+		temp_box.h=dims_frames::hc;
+		if(Bcol::Point_into_Rect((*it).x,(*it).y,temp_box)==true){
+			this->box_collide[i]=(*it);
+			i++;
+		}
+	}
+
+	file.close();
 }

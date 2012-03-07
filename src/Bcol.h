@@ -5,9 +5,11 @@
 #include "MyRect.h"
 #include "MySurface.h"
 #include <vector>
+#include "Sprite.h"
 
 class Bcol{
 private:
+	friend class Sprite;
 	Bcol(void);
 
 	/*Ritorna true se il punto si trova dentro il rettangolo*/

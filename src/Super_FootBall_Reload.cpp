@@ -1,7 +1,6 @@
 #include <cstdlib>
 #include "Applicazione.h"
 #include <SDL\SDL.h>
-#include "Bcol.h"
 
 #ifdef WIN32
 #include <Windows.h>
@@ -11,7 +10,6 @@ int main(int n_param, char** l_param){
 #ifdef WIN32
 	SetDllDirectory("Data/bin");
 #endif
-	Bcol::Converted_IMAGE("test.png","out.txt");
 	Applicazione SFR;
 	SFR.Run();
 

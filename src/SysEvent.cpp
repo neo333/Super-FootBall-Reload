@@ -1,6 +1,12 @@
 #include "SysEvent.h"
 #include "global.h"
 
+#ifdef _DEBUG
+#include "ConsoleDebug.h"
+#include <iostream>
+#define _MAX_BUFFER_CMD_DEBUG 100
+#endif
+
 type_event::mess_event SysEvent::UpDateEvents(void){
 	if(SDL_PollEvent(&this->mEvent)){
 		switch(this->mEvent.type){
@@ -22,6 +28,23 @@ type_event::mess_event SysEvent::UpDateEvents(void){
 				sys_data::keys_main.KEY_ENTER_PRESS=true;
 				return type_event::KEY_PRESS;
 				break;
+#ifdef _DEBUG
+			case SDLK_F1:
+				bool exit=false;
+				std::string cmd_ins;
+				char buffer[_MAX_BUFFER_CMD_DEBUG];
+				while(!exit){
+					std::cout << "CONSOLE DI COMANDO _DEBUG_:\n";
+					std::cin.getline(buffer,_MAX_BUFFER_CMD_DEBUG);
+					cmd_ins=buffer;
+					if(cmd_ins=="exit"){
+						exit=true;
+					}else{
+						ConsoleDebug::Run(cmd_ins);
+					}
+				}
+				break;
+#endif
 			}
 			break;
 
