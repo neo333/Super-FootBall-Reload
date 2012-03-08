@@ -4,6 +4,8 @@
 #include "Mondo.h"
 
 class Level0:public Mondo{
+private:
+	void Create_Ball(void);
 public:
 	Level0(void){
 

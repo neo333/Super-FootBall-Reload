@@ -1,6 +1,10 @@
 #include "Scripts.h"
 #include "global.h"
 
+#ifdef _DEBUG
+#include <iostream>
+#endif
+
 void scripts::Quit_Game(void){
 	sys_data::app_main->Close_Game();
 }
@@ -10,5 +14,23 @@ void scripts::Set_Schermata_Game(void){
 }
 
 void scripts_sprite::script_ball_vone(Sprite& obj){
-	obj.Set_Speed(MyVector(0,1));
+	std::set<Sprite*>::iterator it;
+	it=obj.Get_Collide_List().begin(); 
+	if(it!=obj.Get_Collide_List().end()){
+		switch(obj.Pos_Relative(*(*it))){
+		case DIR_UP:
+			obj.Set_Speed(MyVector(obj.Get_Speed().Get_X(),obj.Get_Speed().Get_Y()*-1));
+			break;
+		case DIR_DOWN:
+			obj.Set_Speed(MyVector(obj.Get_Speed().Get_X(),obj.Get_Speed().Get_Y()*-1));
+			break;
+		case DIR_LEFT:
+			obj.Set_Speed(MyVector(obj.Get_Speed().Get_X()*-1,obj.Get_Speed().Get_Y()));
+			break;
+		case DIR_RIGHT:
+			obj.Set_Speed(MyVector(obj.Get_Speed().Get_X()*-1,obj.Get_Speed().Get_Y()));
+			break;
+		}
+	}
+	
 }

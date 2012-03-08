@@ -26,6 +26,11 @@ public:
 		this->pSprite=sp_param;
 	}
 
+	/*Ritorna il puntatore dello sprite*/
+	Sprite* Get_Sprite(void){
+		return this->pSprite;
+	}
+
 	void Run(const type_event::mess_event&);
 };
 #endif

@@ -144,6 +144,15 @@ public:
 	void Set_Script(void(*script_param)(Sprite&)){
 		this->script=script_param;
 	}
+
+	/*Ritorna la posizione dello Sprite passato nel parametro rispetto a l'oggetto in questionE*/
+	const Direction Pos_Relative(const Sprite&) const;
+
+	/*Ritorna il baricentro dello sprite*/
+	const MyVector Get_Baricentro(void) const{
+		MyRect temp=this->Get_Box_Collide();
+		return MyVector(temp.x+(temp.w/2),temp.y+(temp.h/2));
+	}
 };
 
 OutVideo& operator<<(OutVideo&, Sprite&);

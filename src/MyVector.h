@@ -24,6 +24,14 @@ public:
 	const Sint16& Get_Y(void) const{
 		return this->y;
 	}
+
+	MyVector operator-(const MyVector& oth) const{
+		return MyVector(this->x - oth.x,this->y - oth.y);
+	}
+
+	MyVector operator*(const int& oth) const{
+		return MyVector(this->x*oth,this->y*oth);
+	}
 };
 
 #endif

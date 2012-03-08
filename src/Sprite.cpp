@@ -4,6 +4,10 @@
 #include "Bcol.h"
 #include <SDL\SDL_collide.h>
 
+#ifdef _DEBUG
+#include <iostream>
+#endif
+
 namespace dims_frames{
 	static const Sint16 wc=40;
 	static const Sint16 hc=62;
@@ -125,4 +129,24 @@ OutVideo& operator<<(OutVideo& screen, Sprite& oth){
 #endif
 
 	return screen;
+}
+
+const Direction Sprite::Pos_Relative(const Sprite& oth) const{
+	MyVector point=oth.Get_Baricentro()-this->Get_Baricentro();
+	point.Set_Y(point.Get_Y()*-1);
+	if(point.Get_Y() >= point.Get_X() && point.Get_Y() >= point.Get_X()*-1){
+		return DIR_UP;
+	}
+	if(point.Get_Y() <= point.Get_X() && point.Get_Y() <= point.Get_X()*-1){
+		return DIR_DOWN;
+	}
+	if(point.Get_Y() <= point.Get_X() && point.Get_Y() >= point.Get_X()*-1){
+		return DIR_RIGHT;
+	}
+	if(point.Get_Y() >= point.Get_X() && point.Get_Y() <= point.Get_X()*-1){
+		return DIR_LEFT;
+	}
+	//TODO: errore!
+
+	return DIR_DOWN;
 }
