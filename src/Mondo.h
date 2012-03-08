@@ -5,10 +5,12 @@
 #include <vector>
 #include "SysEvent.h"
 #include "MotorePhi.h"
+#include "Player.h"
 
 class Mondo{
 protected:
 	std::vector<Sprite> object;
+	Player mplayer;
 private:
 	MotorePhi motore_fisico;
 public:

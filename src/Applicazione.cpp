@@ -94,7 +94,7 @@ int Applicazione::Run(void){
 			this->pnt_schermata->Run(mty_event,this->main_screen);
 		}
 		this->main_screen.Flip();
-		sys_data::keys_main.FlushKeys();
+		//sys_data::keys_main.FlushKeys();
 
 	}
 	//CLOSE_APP

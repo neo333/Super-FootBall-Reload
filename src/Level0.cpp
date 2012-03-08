@@ -30,8 +30,7 @@ void Level0::Load(void){
 	this->object.insert(this->object.end(),1,Sprite());
 	this->object.back().Load(pg_filename);
 	this->object.back().Set_Face(DIR_RIGHT);
-	this->object.back().Set_Speed(MyVector(0,1));
-	this->ctrl_key=&this->object.back();
+	this->mplayer.Set_Operator_Sprite(&this->object.back());
 }
 
 void Level0::UnLoad(void){
@@ -39,5 +38,5 @@ void Level0::UnLoad(void){
 }
 
 void Level0::Process(const type_event::mess_event& mEvent, OutVideo& screen){
-
+	this->mplayer.Run(mEvent);
 }

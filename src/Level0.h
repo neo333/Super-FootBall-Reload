@@ -4,10 +4,8 @@
 #include "Mondo.h"
 
 class Level0:public Mondo{
-private:
-	Sprite* ctrl_key;
 public:
-	Level0(void):ctrl_key(NULL){
+	Level0(void){
 
 	}
 	void Load(void);

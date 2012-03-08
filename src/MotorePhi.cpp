@@ -72,18 +72,18 @@ void MotorePhi::MoveAll(void){
 
 			for(Sint16 i=0; i<delay && !collide; i++){
 				if(passo){
-					(*it).Traslate_Instant(DIR_DOWN,1);
+					(*it).Traslate_Instant(DIR_DOWN,1*this->Sign(y_step));
 				}else{
-					(*it).Traslate_Instant(DIR_RIGHT,1);
+					(*it).Traslate_Instant(DIR_RIGHT,1*this->Sign(x_step));
 				}
 				ptemp=this->sing_CheckCollisione_static(&(*it));
 				if(ptemp){
 					collide=true;
 					(*it).Add_ListCollide(ptemp);
 					if(passo){
-						(*it).Traslate_Instant(DIR_DOWN,-1);
+						(*it).Traslate_Instant(DIR_DOWN,-1*this->Sign(y_step));
 					}else{
-						(*it).Traslate_Instant(DIR_RIGHT,-1);
+						(*it).Traslate_Instant(DIR_RIGHT,-1*this->Sign(x_step));
 					}
 				}
 			}

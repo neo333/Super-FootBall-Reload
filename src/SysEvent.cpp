@@ -26,10 +26,11 @@ type_event::mess_event SysEvent::UpDateEvents(void){
 			switch(mEvent.key.keysym.sym){
 			case SDLK_RETURN:
 				sys_data::keys_main.KEY_ENTER_PRESS=true;
-				return type_event::KEY_PRESS;
 				break;
+
 #ifdef _DEBUG
 			case SDLK_F1:
+				{
 				bool exit=false;
 				std::string cmd_ins;
 				char buffer[_MAX_BUFFER_CMD_DEBUG];
@@ -44,8 +45,26 @@ type_event::mess_event SysEvent::UpDateEvents(void){
 					}
 				}
 				break;
+				}
 #endif
+
+			case SDLK_UP:
+				sys_data::keys_main.UP_KEY=true;
+				break;
+
+			case SDLK_DOWN:
+				sys_data::keys_main.DOWN_KEY=true;
+				break;
+
+			case SDLK_RIGHT:
+				sys_data::keys_main.RIGHT_KEY=true;
+				break;
+
+			case SDLK_LEFT:
+				sys_data::keys_main.LEFT_KEY=true;
+				break;
 			}
+			return type_event::KEY_PRESS;
 			break;
 
 			//key_unpress
@@ -53,10 +72,27 @@ type_event::mess_event SysEvent::UpDateEvents(void){
 			switch(mEvent.key.keysym.sym){
 			case SDLK_RETURN:
 				sys_data::keys_main.KEY_ENTER_PRESS=false;
-				return type_event::KEY_RELASE;
+				break;
+
+			case SDLK_UP:
+				sys_data::keys_main.UP_KEY=false;
+				break;
+
+			case SDLK_DOWN:
+				sys_data::keys_main.DOWN_KEY=false;
+				break;
+
+			case SDLK_RIGHT:
+				sys_data::keys_main.RIGHT_KEY=false;
+				break;
+
+			case SDLK_LEFT:
+				sys_data::keys_main.LEFT_KEY=false;
 				break;
 			}
+			return type_event::KEY_RELASE;
 			break;
+		
 
 			//mouse press
 		case SDL_MOUSEBUTTONDOWN:

@@ -10,6 +10,10 @@ public:
 
 	/*KEYS*/
 	bool KEY_ENTER_PRESS;
+	bool UP_KEY;
+	bool DOWN_KEY;
+	bool LEFT_KEY;
+	bool RIGHT_KEY;
 	/*****/
 };
 

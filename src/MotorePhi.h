@@ -11,6 +11,17 @@ private:
 	ad un altro. Ritorna NULL in caso negativo*/
 	Sprite* sing_CheckCollisione_static(Sprite*);
 
+	/*Funzione segno. Ritorna 1 se il numero è positivo, -1 se il numero è negativo altrimenti ritorna 0*/
+	template<class T> static int Sign(const T& num){
+		if(num>0){
+			return 1;
+		}
+		if(num<0){
+			return -1;
+		}
+		return 0;
+	}
+
 	
 	void MoveAll(void);
 public:

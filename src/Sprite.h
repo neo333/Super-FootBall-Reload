@@ -47,10 +47,14 @@ public:
 	void Set_Anim(const bool sw){
 		switch(sw){
 		case true:
-			this->delay_frames.Start();
+			if(this->anim==false){
+				this->delay_frames.Start();
+			}
 			break;
 		case false:
-			this->delay_frames.Stop();
+			if(this->anim==true){
+				this->delay_frames.Stop();
+			}
 			break;
 		}
 		this->anim=sw;
