@@ -16,6 +16,7 @@ private:
 	void Process_Anim(void){
 		this->pSprite->Set_Anim(this->in_moving);
 	}
+	void Process_SetFace(void);
 public:
 	Player(void):pSprite(NULL),in_moving(false),rapid_move(2){
 	}

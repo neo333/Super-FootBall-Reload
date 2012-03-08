@@ -23,6 +23,7 @@ type_event::mess_event SysEvent::UpDateEvents(void){
 
 			//key_press
 		case SDL_KEYDOWN:
+			sys_data::keys_main.Last_effect_key=mEvent.key.keysym.sym;
 			switch(mEvent.key.keysym.sym){
 			case SDLK_RETURN:
 				sys_data::keys_main.KEY_ENTER_PRESS=true;
@@ -69,6 +70,7 @@ type_event::mess_event SysEvent::UpDateEvents(void){
 
 			//key_unpress
 		case SDL_KEYUP:
+			sys_data::keys_main.Last_effect_key=mEvent.key.keysym.sym;
 			switch(mEvent.key.keysym.sym){
 			case SDLK_RETURN:
 				sys_data::keys_main.KEY_ENTER_PRESS=false;
