@@ -1,7 +1,9 @@
 #include "Level0.h"
+#include "Scripts.h"
 
 static const std::string wall_filename("Data/images/sp_wall.bin");
 static const std::string pg_filename("Data/images/sp_p.bin");
+static const std::string ball_filename("Data/images/sp_ball.bin");
 
 void Level0::Load(void){
 	Sprite wall;
@@ -31,6 +33,13 @@ void Level0::Load(void){
 	this->object.back().Load(pg_filename);
 	this->object.back().Set_Face(DIR_RIGHT);
 	this->mplayer.Set_Operator_Sprite(&this->object.back());
+
+	//palla
+	this->object.insert(this->object.end(),1,Sprite());
+	this->object.back().Load(ball_filename);
+	this->object.back().SetX(400);
+	this->object.back().SetY(300);
+	this->object.back().Set_Script(scripts_sprite::script_ball_vone);
 }
 
 void Level0::UnLoad(void){

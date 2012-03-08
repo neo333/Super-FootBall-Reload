@@ -54,6 +54,10 @@ void Sprite::Process(void){
 	pcomp->y_cut=yc;
 	pcomp->w_cut=dims_frames::wc;
 	pcomp->h_cut=dims_frames::hc;
+
+	if(this->script){
+		this->script(*this);
+	}
 }
 
 void Sprite::Load_BoxCollide(const std::string& filename){
@@ -77,7 +81,7 @@ void Sprite::Load_BoxCollide(const std::string& filename){
 	std::ifstream file;
 	std::vector<MyRect> list;
 	MyRect temp_ins;
-	file.open(filename_adjust);
+	file.open(filename_adjust, std::ios::binary);
 	if(file.is_open()==false){
 		return;
 	}

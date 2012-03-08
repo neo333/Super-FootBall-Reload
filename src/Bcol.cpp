@@ -31,7 +31,7 @@ bool Bcol::Converted_IMAGE(const std::string& file_name_input, const std::string
 
 	std::ofstream file_out;
 	std::vector<MyRect>::iterator it;
-	file_out.open(file_name_output);
+	file_out.open(file_name_output, std::ios::binary);
 	if(file_out.is_open()==false){
 		return false;
 	}

@@ -16,6 +16,8 @@ enum Direction{
 
 class Sprite: public Bgui{
 private:
+	void (*script)(Sprite&);
+
 	void Process(void);
 	Direction face;
 
@@ -30,7 +32,7 @@ private:
 
 	std::set<Sprite*> list_collide;
 public:
-	Sprite(void):frame(0),anim(false),face(DIR_DOWN){
+	Sprite(void):frame(0),anim(false),face(DIR_DOWN),script(NULL){
 		this->Set_Delay_Frames(130);
 		this->box_collide.resize(4);
 	}
@@ -132,6 +134,16 @@ public:
 
 	/*Ritorna True se due sprite collidono*/
 	bool Collide_with_Sprite(const Sprite&) const;
+
+	/*Ritorna la lista delle collisioni dell'oggetto*/
+	const std::set<Sprite*>& Get_Collide_List(void) const{
+		return this->list_collide;
+	}
+
+	/*Setta lo script associato allo sprite*/
+	void Set_Script(void(*script_param)(Sprite&)){
+		this->script=script_param;
+	}
 };
 
 OutVideo& operator<<(OutVideo&, Sprite&);
