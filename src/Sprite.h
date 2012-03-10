@@ -153,6 +153,9 @@ public:
 		MyRect temp=this->Get_Box_Collide();
 		return MyVector(temp.x+(temp.w/2),temp.y+(temp.h/2));
 	}
+
+	/*Ritorna TRUE se lo sprite è visibile sullo schermo*/
+	bool Is_Visible_InScreen(void) const;
 };
 
 OutVideo& operator<<(OutVideo&, Sprite&);

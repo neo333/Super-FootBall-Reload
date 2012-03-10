@@ -7,3 +7,14 @@ OutVideo& operator<<(OutVideo& screen, Mondo& obj){
 	}
 	return screen;
 }
+
+void Mondo::DeleteSprite(const Sprite* pSprite){
+	register std::vector<Sprite>::iterator it;
+	for(it=this->object.begin(); it!=this->object.end(); ){
+		if(&(*it)==pSprite){
+			it=this->object.erase(it);
+		}else{
+			it++;
+		}
+	}
+}

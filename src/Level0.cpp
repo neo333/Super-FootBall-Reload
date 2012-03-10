@@ -64,9 +64,6 @@ void Level0::Load(void){
 	this->object.back().Set_Face(DIR_RIGHT);
 	this->object.back().SetX(100);
 	this->mplayer.Set_Operator_Sprite(&this->object.back());
-
-	//palla
-	this->Create_Ball();
 }
 
 void Level0::UnLoad(void){
@@ -75,6 +72,21 @@ void Level0::UnLoad(void){
 
 void Level0::Process(const type_event::mess_event& mEvent, OutVideo& screen){
 	this->mplayer.Run(mEvent);
+
+	//controllo su tutte le palle in game
+	if(this->balls_ingame.size()!=0){
+		std::vector<Sprite*>::iterator it;
+		for(it=this->balls_ingame.begin(); it!=this->balls_ingame.end(); ){
+			if((*it)->Is_Visible_InScreen()==false){
+				this->DeleteSprite((*it));
+				it=this->balls_ingame.erase(it);
+			}else{
+				it++;
+			}
+		}
+	}else{
+		this->Create_Ball();
+	}
 }
 
 void Level0::Create_Ball(void){
@@ -84,4 +96,6 @@ void Level0::Create_Ball(void){
 	this->object.back().SetY(300);
 	this->object.back().Set_Script(scripts_sprite::script_ball_vone);
 	this->object.back().Set_Speed(MyVector(-3,-3));
+
+	this->balls_ingame.insert(this->balls_ingame.end(),&(this->object.back()));
 }

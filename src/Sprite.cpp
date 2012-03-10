@@ -125,6 +125,7 @@ OutVideo& operator<<(OutVideo& screen, Sprite& oth){
 #ifdef _DEBUG
 	if(sys_data::app_main->Get_Debug_Vis_Bcol()){
 		screen << oth.Get_Box_Collide();
+		screen << oth.Get_Baricentro();
 	}
 #endif
 
@@ -149,4 +150,11 @@ const Direction Sprite::Pos_Relative(const Sprite& oth) const{
 	//TODO: errore!
 
 	return DIR_DOWN;
+}
+
+bool Sprite::Is_Visible_InScreen(void) const{
+	if(SDL_CollideBoundingBox2(this->Get_Box_Collide(),MyRect(0,0,sys_data::app_main->Get_W_Screen(),sys_data::app_main->Get_H_Screen()))){
+		return true;
+	}
+	return false;
 }

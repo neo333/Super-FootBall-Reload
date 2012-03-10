@@ -11,6 +11,9 @@ class Mondo{
 protected:
 	std::vector<Sprite> object;
 	Player mplayer;
+
+	/*Cancella uno sprite dal mondo passandone solamente il puntatore*/
+	void DeleteSprite(const Sprite*);
 private:
 	MotorePhi motore_fisico;
 public:

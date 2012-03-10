@@ -87,6 +87,13 @@ public:
 	const bool& Get_Debug_Vis_Bcol(void) const{
 		return this->vis_bcol_rect;
 	}
+
+	const int& Get_W_Screen(void) const{
+		return this->opz_app.Get_Wwin();
+	}
+	const int& Get_H_Screen(void) const{
+		return this->opz_app.Get_Hwin();
+	}
 };
 
 #endif

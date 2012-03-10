@@ -2,13 +2,17 @@
 #define _MYVECTOR_SFR
 
 #include <SDL\SDL.h>
+#include "OutVideo.h"
+#include "colors.h"
 
 class MyVector{
 private:
+	Colors mColor;
+
 	Sint16 x;
 	Sint16 y;
 public:
-	MyVector(const Sint16& x_param=0, const Sint16& y_param=0):x(x_param),y(y_param){
+	MyVector(const Sint16& x_param=0, const Sint16& y_param=0, const Colors& c_param=Colors(255,0,0)):x(x_param),y(y_param),mColor(c_param){
 
 	}
 
@@ -24,6 +28,12 @@ public:
 	const Sint16& Get_Y(void) const{
 		return this->y;
 	}
+	void Set_Color(const Colors& c_param){
+		this->mColor=c_param;
+	}
+	const Colors& Get_Color(void) const{
+		return this->mColor;
+	}
 
 	MyVector operator-(const MyVector& oth) const{
 		return MyVector(this->x - oth.x,this->y - oth.y);
@@ -32,6 +42,10 @@ public:
 	MyVector operator*(const int& oth) const{
 		return MyVector(this->x*oth,this->y*oth);
 	}
+
+	friend OutVideo& operator<<(OutVideo&, const MyVector);
 };
+
+OutVideo& operator<<(OutVideo&, const MyVector);
 
 #endif
