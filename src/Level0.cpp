@@ -1,6 +1,10 @@
 #include "Level0.h"
 #include "Scripts.h"
 
+#ifdef _DEBUG
+#include <iostream>
+#endif
+
 static const std::string wall_filename("Data/images/sp_wall.bin");
 static const std::string pg_filename("Data/images/sp_p.bin");
 static const std::string ball_filename("Data/images/sp_ball.bin");

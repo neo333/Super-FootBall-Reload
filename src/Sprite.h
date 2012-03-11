@@ -140,7 +140,8 @@ public:
 		return this->list_collide;
 	}
 
-	/*Ritorna la collisione più vicina dell'oggetto (in caso collida con più oggetti)*/
+	/*Ritorna la collisione più vicina dell'oggetto (in caso collida con più oggetti)
+	In caso di nessuna collisione ritorna NULL!*/
 	const Sprite* Get_Collide_Near(void) const{
 		Sprite* rts=NULL;
 		std::set<Sprite*>::iterator it;
@@ -173,9 +174,10 @@ public:
 	/*Ritorna TRUE se lo sprite è visibile sullo schermo*/
 	bool Is_Visible_InScreen(void) const;
 
-	/*Ritorna la distanza in float con lo sprite passato nel parametro TODO: verificare se funziona bene!*/
+	/*Ritorna la distanza in float con lo sprite passato nel parametro*/
 	float Distance_Sprite(const Sprite& oth) const{
-		return this->Get_Baricentro().Module()-oth.Get_Baricentro().Module();
+		MyVector dist_point=this->Get_Baricentro()-oth.Get_Baricentro();
+		return dist_point.Module();
 	}
 };
 
