@@ -4,6 +4,8 @@
 static const std::string wall_filename("Data/images/sp_wall.bin");
 static const std::string pg_filename("Data/images/sp_p.bin");
 static const std::string ball_filename("Data/images/sp_ball.bin");
+static const Sint16 X_PLAYER_START=50;
+static const Sint16 Y_PLAYER_START=250;
 
 void Level0::Load(void){
 	Sprite wall;
@@ -61,13 +63,16 @@ void Level0::Load(void){
 	//player
 	this->object.insert(this->object.end(),1,Sprite());
 	this->object.back().Load(pg_filename);
-	this->object.back().Set_Face(DIR_RIGHT);
-	this->object.back().SetX(100);
 	this->mplayer.Set_Operator_Sprite(&this->object.back());
+
+
+	//inizializza le posizioni
+	this->Set_PositionSTART_Players();
 }
 
 void Level0::UnLoad(void){
 	this->object.clear();
+	this->mplayer.Set_Operator_Sprite(NULL);
 }
 
 void Level0::Process(const type_event::mess_event& mEvent, OutVideo& screen){
@@ -98,4 +103,12 @@ void Level0::Create_Ball(void){
 	this->object.back().Set_Speed(MyVector(-3,-3));
 
 	this->balls_ingame.insert(this->balls_ingame.end(),&(this->object.back()));
+}
+
+void Level0::Set_PositionSTART_Players(void){
+	if(this->mplayer.Get_Sprite()){
+		this->mplayer.Get_Sprite()->SetX(X_PLAYER_START);
+		this->mplayer.Get_Sprite()->SetY(Y_PLAYER_START);
+		this->mplayer.Get_Sprite()->Set_Face(DIR_RIGHT);
+	}
 }

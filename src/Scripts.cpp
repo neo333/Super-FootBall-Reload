@@ -14,10 +14,9 @@ void scripts::Set_Schermata_Game(void){
 }
 
 void scripts_sprite::script_ball_vone(Sprite& obj){
-	std::set<Sprite*>::iterator it;
-	it=obj.Get_Collide_List().begin(); 
-	if(it!=obj.Get_Collide_List().end()){
-		switch(obj.Pos_Relative(*(*it))){
+	const Sprite* obj_col=obj.Get_Collide_Near();
+	if(obj_col){
+		switch(obj.Pos_Relative(*obj_col)){
 		case DIR_UP:
 			obj.Set_Speed(MyVector(obj.Get_Speed().Get_X(),obj.Get_Speed().Get_Y()*-1));
 			break;
@@ -32,5 +31,4 @@ void scripts_sprite::script_ball_vone(Sprite& obj){
 			break;
 		}
 	}
-	
 }

@@ -4,6 +4,7 @@
 #include <SDL\SDL.h>
 #include "OutVideo.h"
 #include "colors.h"
+#include <cmath>
 
 class MyVector{
 private:
@@ -38,9 +39,12 @@ public:
 	MyVector operator-(const MyVector& oth) const{
 		return MyVector(this->x - oth.x,this->y - oth.y);
 	}
-
 	MyVector operator*(const int& oth) const{
 		return MyVector(this->x*oth,this->y*oth);
+	}
+
+	float Module(void) const{
+		return sqrt((float)((this->x*this->x) + (this->y*this->y)));
 	}
 
 	friend OutVideo& operator<<(OutVideo&, const MyVector);

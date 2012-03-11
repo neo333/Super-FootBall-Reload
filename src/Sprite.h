@@ -140,6 +140,22 @@ public:
 		return this->list_collide;
 	}
 
+	/*Ritorna la collisione più vicina dell'oggetto (in caso collida con più oggetti)*/
+	const Sprite* Get_Collide_Near(void) const{
+		Sprite* rts=NULL;
+		std::set<Sprite*>::iterator it;
+		for(it=this->list_collide.begin(); it!=this->list_collide.end(); it++){
+			if(rts){
+				if(this->Distance_Sprite(*(*it)) < this->Distance_Sprite(*rts)){
+					rts=(*it);
+				}
+			}else{
+				rts=(*it);
+			}
+		}
+		return rts;
+	}
+
 	/*Setta lo script associato allo sprite*/
 	void Set_Script(void(*script_param)(Sprite&)){
 		this->script=script_param;
@@ -156,6 +172,11 @@ public:
 
 	/*Ritorna TRUE se lo sprite è visibile sullo schermo*/
 	bool Is_Visible_InScreen(void) const;
+
+	/*Ritorna la distanza in float con lo sprite passato nel parametro TODO: verificare se funziona bene!*/
+	float Distance_Sprite(const Sprite& oth) const{
+		return this->Get_Baricentro().Module()-oth.Get_Baricentro().Module();
+	}
 };
 
 OutVideo& operator<<(OutVideo&, Sprite&);
