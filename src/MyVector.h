@@ -42,6 +42,12 @@ public:
 	MyVector operator*(const int& oth) const{
 		return MyVector(this->x*oth,this->y*oth);
 	}
+	bool operator==(const MyVector& oth)const{
+		if(this->x==oth.x && this->y==oth.y){
+			return true;
+		}
+		return false;
+	}
 
 	float Module(void) const{
 		return sqrt((float)((this->x*this->x) + (this->y*this->y)));

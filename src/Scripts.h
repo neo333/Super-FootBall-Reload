@@ -8,14 +8,4 @@ namespace scripts{
 	void Set_Schermata_Game(void);	//Setta la schermata di game per l'applicativo
 }
 
-
-
-
-
-
-/****************SCRIPTS SPRITE*****************/
-namespace scripts_sprite{
-	void script_ball_vone(Sprite&);
-}
-
 #endif

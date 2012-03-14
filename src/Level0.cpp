@@ -12,62 +12,59 @@ static const Sint16 X_PLAYER_START=50;
 static const Sint16 Y_PLAYER_START=250;
 
 void Level0::Load(void){
-	Sprite wall;
-	unsigned int size;
-
-	wall.Load(wall_filename);
-	wall.Set_Face(DIR_UP);
-
-	//mura superiori
-	wall.SetY(0);
-	this->object.insert(this->object.begin(),20,wall);
-	size=this->object.size();
-	for(unsigned int i=0; i<size; i++){
-		this->object[i].SetX(i*40);
+	Sprite* curs;
+	for(unsigned int i=0; i<20; i++){
+		curs=this->Insert_Sprite();
+		curs->Load(wall_filename);
+		curs->Set_Face(DIR_UP);
+		curs->SetY(0);
+		curs->SetX(i*40);
 	}
 
 	//mura inferiori
-	wall.Set_Face(DIR_DOWN);
-	wall.SetY(535);
-	this->object.insert(this->object.end(),20,wall);
-	for(unsigned int i=size; i<this->object.size(); i++){
-		this->object[i].SetX((i-size)*40);
+	for(unsigned int i=0; i<20; i++){
+		curs=this->Insert_Sprite();
+		curs->Load(wall_filename);
+		curs->Set_Face(DIR_DOWN);
+		curs->SetY(535);
+		curs->SetX(i*40);
 	}
 
 	//mura sinistre
-	wall.Set_Face(DIR_LEFT);
-	wall.SetX(0);
-	wall.SetY(10);
 	for(unsigned int i=0; i<5; i++){
-		this->object.insert(this->object.end(),1,wall);
-		this->object.back().SetY(i*40+wall.GetY());
+		curs=this->Insert_Sprite();
+		curs->Load(wall_filename);
+		curs->Set_Face(DIR_LEFT);
+		curs->SetY(i*40+8);
+		curs->SetX(0);
 	}
-	wall.SetX(0);
-	wall.SetY(524);
 	for(unsigned int i=0; i<5; i++){
-		this->object.insert(this->object.end(),1,wall);
-		this->object.back().SetY(wall.GetY()-i*40);
+		curs=this->Insert_Sprite();
+		curs->Load(wall_filename);
+		curs->Set_Face(DIR_LEFT);
+		curs->SetY(524-i*40);
+		curs->SetX(0);
 	}
 
 	//mura destre
-	wall.Set_Face(DIR_RIGHT);
-	wall.SetX(760);
-	wall.SetY(8);
 	for(unsigned int i=0; i<5; i++){
-		this->object.insert(this->object.end(),1,wall);
-		this->object.back().SetY(i*40+wall.GetY());
+		curs=this->Insert_Sprite();
+		curs->Load(wall_filename);
+		curs->Set_Face(DIR_RIGHT);
+		curs->SetY(i*40+8);
+		curs->SetX(760);
 	}
-	wall.SetX(760);
-	wall.SetY(524);
 	for(unsigned int i=0; i<5; i++){
-		this->object.insert(this->object.end(),1,wall);
-		this->object.back().SetY(wall.GetY()-i*40);
+		curs=this->Insert_Sprite();
+		curs->Load(wall_filename);
+		curs->Set_Face(DIR_RIGHT);
+		curs->SetY(524-i*40);
+		curs->SetX(760);
 	}
 
-	//player
-	this->object.insert(this->object.end(),1,Sprite());
-	this->object.back().Load(pg_filename);
-	this->mplayer.Set_Operator_Sprite(&this->object.back());
+	curs=this->Insert_Sprite();
+	curs->Load(pg_filename);
+	this->Set_Sprite_Player(curs);
 
 
 	//inizializza le posizioni
@@ -75,32 +72,29 @@ void Level0::Load(void){
 }
 
 void Level0::UnLoad(void){
-	this->object.clear();
-	this->mplayer.Set_Operator_Sprite(NULL);
+	this->Clear_AllSprites();
+	this->Set_Sprite_Player(NULL);
 }
 
 void Level0::Process(const type_event::mess_event& mEvent, OutVideo& screen){
-	this->mplayer.Run(mEvent);
 	this->Check_Ball_InScreen();
-	
 }
 
 void Level0::Create_Ball(void){
-	this->object.insert(this->object.end(),1,Sprite());
-	this->object.back().Load(ball_filename);
-	this->object.back().SetX(400);
-	this->object.back().SetY(300);
-	this->object.back().Set_Script(scripts_sprite::script_ball_vone);
-	this->object.back().Set_Speed(MyVector(-3,-3));
+	Sprite* curr=this->Insert_Sprite(SP_BALL);
+	curr->Load(ball_filename);
+	curr->SetX(400);
+	curr->SetY(300);
+	curr->Set_Speed(MyVector(-3,-3));
 
-	this->balls_ingame.insert(this->balls_ingame.end(),&(this->object.back()));
+	this->balls_ingame.insert(this->balls_ingame.end(),curr);
 }
 
 void Level0::Set_PositionSTART_Players(void){
-	if(this->mplayer.Get_Sprite()){
-		this->mplayer.Get_Sprite()->SetX(X_PLAYER_START);
-		this->mplayer.Get_Sprite()->SetY(Y_PLAYER_START);
-		this->mplayer.Get_Sprite()->Set_Face(DIR_RIGHT);
+	if(this->Get_Sprite_Player()){
+		this->Get_Sprite_Player()->SetX(X_PLAYER_START);
+		this->Get_Sprite_Player()->SetY(Y_PLAYER_START);
+		this->Get_Sprite_Player()->Set_Face(DIR_RIGHT);
 	}
 }
 
@@ -117,5 +111,6 @@ void Level0::Check_Ball_InScreen(void){
 		}
 	}else{
 		this->Create_Ball();
+		this->Set_PositionSTART_Players();
 	}
 }

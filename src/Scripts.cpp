@@ -12,23 +12,3 @@ void scripts::Quit_Game(void){
 void scripts::Set_Schermata_Game(void){
 	sys_data::app_main->Set_Pointer_Schermata(schermate_game::GAME);
 }
-
-void scripts_sprite::script_ball_vone(Sprite& obj){
-	const Collision* obj_col=obj.Get_Collide_Near();
-	if(obj_col){
-		switch(obj_col->Get_DirectionObj()){
-		case DIR_UP:
-			obj.Set_Speed(MyVector(obj.Get_Speed().Get_X(),obj.Get_Speed().Get_Y()*-1));
-			break;
-		case DIR_DOWN:
-			obj.Set_Speed(MyVector(obj.Get_Speed().Get_X(),obj.Get_Speed().Get_Y()*-1));
-			break;
-		case DIR_LEFT:
-			obj.Set_Speed(MyVector(obj.Get_Speed().Get_X()*-1,obj.Get_Speed().Get_Y()));
-			break;
-		case DIR_RIGHT:
-			obj.Set_Speed(MyVector(obj.Get_Speed().Get_X()*-1,obj.Get_Speed().Get_Y()));
-			break;
-		}
-	}
-}

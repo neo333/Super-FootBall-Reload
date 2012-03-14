@@ -59,9 +59,7 @@ void Sprite::Process(void){
 	pcomp->w_cut=dims_frames::wc;
 	pcomp->h_cut=dims_frames::hc;
 
-	if(this->script){
-		this->script(*this);
-	}
+	this->Main_Script();
 }
 
 void Sprite::Load_BoxCollide(const std::string& filename){

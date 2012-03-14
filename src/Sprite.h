@@ -48,8 +48,6 @@ public:
 
 class Sprite: public Bgui{
 private:
-	void (*script)(Sprite&);
-
 	void Process(void);
 	Direction face;
 
@@ -63,8 +61,12 @@ private:
 	void Load_BoxCollide(const std::string&);
 
 	std::set<Collision> list_collide;
+
+	virtual void Main_Script(void){
+
+	}
 public:
-	Sprite(void):frame(0),anim(false),face(DIR_DOWN),script(NULL){
+	Sprite(void):frame(0),anim(false),face(DIR_DOWN){
 		this->Set_Delay_Frames(130);
 		this->box_collide.resize(4);
 	}
@@ -187,11 +189,6 @@ public:
 			}
 		}
 		return rts;
-	}
-
-	/*Setta lo script associato allo sprite*/
-	void Set_Script(void(*script_param)(Sprite&)){
-		this->script=script_param;
 	}
 
 	/*Ritorna la posizione dello Sprite passato nel parametro rispetto a l'oggetto in questionE*/

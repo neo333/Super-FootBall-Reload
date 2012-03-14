@@ -17,6 +17,7 @@ int Game::Run(const type_event::mess_event& mEvent, OutVideo& screen){
 	if(this->pLevel){
 		this->pLevel->Process_MotorPhi();
 		this->pLevel->Process(mEvent,screen);
+		this->pLevel->mplayer.Run(mEvent);
 		screen << *this->pLevel;
 	}
 	return 0;

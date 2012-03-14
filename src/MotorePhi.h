@@ -5,7 +5,7 @@
 
 class MotorePhi{
 private:
-	std::vector<Sprite> *pObjs;
+	std::vector<Sprite*> *pObjs;
 
 	/*Verifica se nell'esatto momento della chiamata di questa funzione lo sprite passato nel parametro è sovrapposto
 	ad un altro. Ritorna NULL in caso negativo*/
@@ -42,7 +42,7 @@ private:
 
 	void MoveAll(void);
 public:
-	MotorePhi(std::vector<Sprite>* ppobjs):pObjs(ppobjs){
+	MotorePhi(std::vector<Sprite*>* ppobjs):pObjs(ppobjs){
 		
 	}
 	void Process(void);
