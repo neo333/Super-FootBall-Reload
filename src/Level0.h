@@ -9,6 +9,7 @@ private:
 	std::vector<Sprite*> balls_ingame;
 
 	void Set_PositionSTART_Players(void);
+	void Check_Ball_InScreen(void);
 public:
 	Level0(void){
 

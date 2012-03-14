@@ -21,7 +21,7 @@ private:
 	}
 	void Process_SetFace(void);
 public:
-	Player(void):pSprite(NULL),mod_speed(2){
+	Player(void):pSprite(NULL),mod_speed(3){
 	}
 
 	/*Definisce su quale sprite il giocatore ha il controllo*/

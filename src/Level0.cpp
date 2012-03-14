@@ -81,21 +81,8 @@ void Level0::UnLoad(void){
 
 void Level0::Process(const type_event::mess_event& mEvent, OutVideo& screen){
 	this->mplayer.Run(mEvent);
-
-	//controllo su tutte le palle in game
-	if(this->balls_ingame.size()!=0){
-		std::vector<Sprite*>::iterator it;
-		for(it=this->balls_ingame.begin(); it!=this->balls_ingame.end(); ){
-			if((*it)->Is_Visible_InScreen()==false){
-				this->DeleteSprite((*it));
-				it=this->balls_ingame.erase(it);
-			}else{
-				it++;
-			}
-		}
-	}else{
-		this->Create_Ball();
-	}
+	this->Check_Ball_InScreen();
+	
 }
 
 void Level0::Create_Ball(void){
@@ -114,5 +101,21 @@ void Level0::Set_PositionSTART_Players(void){
 		this->mplayer.Get_Sprite()->SetX(X_PLAYER_START);
 		this->mplayer.Get_Sprite()->SetY(Y_PLAYER_START);
 		this->mplayer.Get_Sprite()->Set_Face(DIR_RIGHT);
+	}
+}
+
+void Level0::Check_Ball_InScreen(void){
+	if(this->balls_ingame.size()!=0){
+		std::vector<Sprite*>::iterator it;
+		for(it=this->balls_ingame.begin(); it!=this->balls_ingame.end(); ){
+			if((*it)->Is_Visible_InScreen()==false){
+				this->DeleteSprite((*it));
+				it=this->balls_ingame.erase(it);
+			}else{
+				it++;
+			}
+		}
+	}else{
+		this->Create_Ball();
 	}
 }
