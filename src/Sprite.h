@@ -16,15 +16,33 @@ enum Direction{
 	DIR_RIGHT
 };
 
-struct TYPE_COLLISION{
-	Sprite* oth_obj;
-	Direction dir_oth_obj;
+class Collision{
+private:
+	const Sprite* oth_obj;
+	const Direction dir_oth_obj;
 
-	bool operator<(const TYPE_COLLISION& oth) const{
+	friend class Sprite;
+	operator const Sprite&(void)const{
+		return *this->oth_obj;
+	}
+public:
+	Collision(const Sprite* oo_param, const Direction& dir_param):oth_obj(oo_param),dir_oth_obj(dir_param){
+		if(!this->oth_obj){
+			//TODO: fare errore! è stata creata una collisione nulla!
+		}
+	}
+	bool operator<(const Collision& oth) const{
 		if((int)(this->oth_obj)<(int)(oth.oth_obj)){
 			return true;
 		}
 		return false;
+	}
+
+	const Sprite* Get_SpritePointer(void) const{
+		return this->oth_obj;
+	}
+	const Direction& Get_DirectionObj(void) const{
+		return this->dir_oth_obj;
 	}
 };
 
@@ -44,7 +62,7 @@ private:
 	std::vector<MyRect> box_collide;
 	void Load_BoxCollide(const std::string&);
 
-	std::set<Sprite*> list_collide;
+	std::set<Collision> list_collide;
 public:
 	Sprite(void):frame(0),anim(false),face(DIR_DOWN),script(NULL){
 		this->Set_Delay_Frames(130);
@@ -96,10 +114,10 @@ public:
 		this->list_collide.clear();
 	}
 
-	/*Aggiunge uno sprite alla lista delle collisioni*/
-	void Add_ListCollide(Sprite* oth){
-		if(this!=oth){
-			this->list_collide.insert(oth);
+	/*Aggiunge una collisione alla lista delle collisioni*/
+	void Add_ListCollide(const Collision& col_param){
+		if(this!=col_param.Get_SpritePointer()){
+			this->list_collide.insert(col_param);
 		}
 	}
 
@@ -150,22 +168,22 @@ public:
 	bool Collide_with_Sprite(const Sprite&) const;
 
 	/*Ritorna la lista delle collisioni dell'oggetto*/
-	const std::set<Sprite*>& Get_Collide_List(void) const{
+	const std::set<Collision>& Get_Collide_List(void) const{
 		return this->list_collide;
 	}
 
 	/*Ritorna la collisione più vicina dell'oggetto (in caso collida con più oggetti)
 	In caso di nessuna collisione ritorna NULL!*/
-	const Sprite* Get_Collide_Near(void) const{
-		Sprite* rts=NULL;
-		std::set<Sprite*>::iterator it;
+	const Collision* Get_Collide_Near(void) const{
+		const Collision* rts=NULL;
+		std::set<Collision>::iterator it;
 		for(it=this->list_collide.begin(); it!=this->list_collide.end(); it++){
 			if(rts){
-				if(this->Distance_Sprite(*(*it)) < this->Distance_Sprite(*rts)){
-					rts=(*it);
+				if(this->Distance_Sprite((*it)) < this->Distance_Sprite(*rts)){
+					rts=&(*it);
 				}
 			}else{
-				rts=(*it);
+				rts=&(*it);
 			}
 		}
 		return rts;

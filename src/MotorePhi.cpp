@@ -5,37 +5,6 @@ void MotorePhi::Process(void){
 	this->MoveAll();
 }
 
-void MotorePhi::Force_CheckCollision(void){
-	std::vector<Sprite>::iterator it;
-	Direction mov_loc;
-	Sprite* p_temp;
-
-	for(it=this->pObjs->begin(); it!=this->pObjs->end(); it++){
-		(*it).Clear_ListCollide();
-		for(unsigned int i=0; i<4; i++){
-			switch(i){
-			case 0:
-				mov_loc=DIR_UP;
-				break;
-			case 1:
-				mov_loc=DIR_DOWN;
-				break;
-			case 2:
-				mov_loc=DIR_LEFT;
-				break;
-			case 3:
-				mov_loc=DIR_RIGHT;
-				break;
-			}
-			(*it).Traslate_Instant(mov_loc,1);
-			p_temp=this->sing_CheckCollisione_static(&(*it));
-			if(p_temp){
-				(*it).Add_ListCollide(p_temp);
-			}
-			(*it).Traslate_Instant(mov_loc,-1);
-		}
-	}
-}
 
 Sprite* MotorePhi::sing_CheckCollisione_static(Sprite* pSprite){
 	register std::vector<Sprite>::iterator it;
@@ -55,6 +24,7 @@ void MotorePhi::MoveAll(void){
 	Sint16 x_step, y_step, delay;
 	Sprite* ptemp;
 	bool collide;
+	Direction mov_inst;
 
 	for(it=this->pObjs->begin(); it!=this->pObjs->end(); it++){
 		(*it).Clear_ListCollide();
@@ -73,13 +43,24 @@ void MotorePhi::MoveAll(void){
 			for(Sint16 i=0; i<delay && !collide; i++){
 				if(passo){
 					(*it).Traslate_Instant(DIR_DOWN,1*this->Sign(y_step));
+					if(y_step>=0){
+						mov_inst=DIR_DOWN;
+					}else{
+						mov_inst=DIR_UP;
+					}
 				}else{
 					(*it).Traslate_Instant(DIR_RIGHT,1*this->Sign(x_step));
+					if(x_step>=0){
+						mov_inst=DIR_RIGHT;
+					}else{
+						mov_inst=DIR_LEFT;
+					}
 				}
 				ptemp=this->sing_CheckCollisione_static(&(*it));
 				if(ptemp){
 					collide=true;
-					(*it).Add_ListCollide(ptemp);
+					(*it).Add_ListCollide(Collision(ptemp,mov_inst));
+					ptemp->Add_ListCollide(Collision(&(*it),this->Reverse_Direction(mov_inst)));
 					if(passo){
 						(*it).Traslate_Instant(DIR_DOWN,-1*this->Sign(y_step));
 					}else{

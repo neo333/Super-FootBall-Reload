@@ -14,9 +14,9 @@ void scripts::Set_Schermata_Game(void){
 }
 
 void scripts_sprite::script_ball_vone(Sprite& obj){
-	const Sprite* obj_col=obj.Get_Collide_Near();
+	const Collision* obj_col=obj.Get_Collide_Near();
 	if(obj_col){
-		switch(obj.Pos_Relative(*obj_col)){
+		switch(obj_col->Get_DirectionObj()){
 		case DIR_UP:
 			obj.Set_Speed(MyVector(obj.Get_Speed().Get_X(),obj.Get_Speed().Get_Y()*-1));
 			break;

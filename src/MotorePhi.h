@@ -21,18 +21,31 @@ private:
 		}
 		return 0;
 	}
-
 	
+	/*Ribalta la direzione indicata nel parametro*/
+	static Direction Reverse_Direction(const Direction& param){
+		switch(param){
+		case DIR_DOWN:
+			return DIR_UP;
+		case DIR_UP:
+			return DIR_DOWN;
+		case DIR_LEFT:
+			return DIR_RIGHT;
+		case DIR_RIGHT:
+			return DIR_LEFT;
+		default:
+			//TODO: fare errore!
+			break;
+		}
+		return DIR_DOWN;
+	}
+
 	void MoveAll(void);
 public:
 	MotorePhi(std::vector<Sprite>* ppobjs):pObjs(ppobjs){
 		
 	}
 	void Process(void);
-
-	/*Forza il controllo sulle liste di collisioni di tutti gli oggetti.
-	Refresha in maniera rigorosa ogni lista di collisione di ogni oggetto del mondo*/
-	void Force_CheckCollision(void);
 };
 
 #endif
