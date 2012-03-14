@@ -7,11 +7,25 @@
 #include "MyRect.h"
 #include <set>
 
+class Sprite;
+
 enum Direction{
 	DIR_UP,
 	DIR_DOWN,
 	DIR_LEFT,
 	DIR_RIGHT
+};
+
+struct TYPE_COLLISION{
+	Sprite* oth_obj;
+	Direction dir_oth_obj;
+
+	bool operator<(const TYPE_COLLISION& oth) const{
+		if((int)(this->oth_obj)<(int)(oth.oth_obj)){
+			return true;
+		}
+		return false;
+	}
 };
 
 class Sprite: public Bgui{
