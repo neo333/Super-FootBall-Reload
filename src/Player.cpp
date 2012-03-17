@@ -25,7 +25,6 @@ void Player::Process_Moving(const type_event::mess_event& mEvent){
 	if(sys_data::keys_main.LEFT_KEY){
 		this->speed_player.Set_X(-this->mod_speed);
 	}
-
 	this->pSprite->Set_Speed(this->speed_player);
 }
 

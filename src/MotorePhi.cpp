@@ -25,6 +25,7 @@ void MotorePhi::MoveAll(void){
 	Sprite* ptemp;
 	bool collide;
 	Direction mov_inst;
+	MyRect con_area;
 
 	for(it=this->pObjs->begin(); it!=this->pObjs->end(); it++){
 		(*it)->Clear_ListCollide();
@@ -66,6 +67,25 @@ void MotorePhi::MoveAll(void){
 					}else{
 						(*it)->Traslate_Instant(DIR_RIGHT,-1*this->Sign(x_step));
 					}
+				}else{
+					//------------controlla constraint area---------------
+					if((*it)->Get_Constraint_Area(con_area)){
+						if((*it)->GetX() < con_area.x || (*it)->GetX() > con_area.x+con_area.w){
+							if(passo){
+								(*it)->Traslate_Instant(DIR_DOWN,-1*this->Sign(y_step));
+							}else{
+								(*it)->Traslate_Instant(DIR_RIGHT,-1*this->Sign(x_step));
+							}
+						}
+						if((*it)->GetY() < con_area.y || (*it)->GetY() > con_area.y+con_area.h){
+							if(passo){
+								(*it)->Traslate_Instant(DIR_DOWN,-1*this->Sign(y_step));
+							}else{
+								(*it)->Traslate_Instant(DIR_RIGHT,-1*this->Sign(x_step));
+							}
+						}
+					}
+					//------------------------------------------------------
 				}
 			}
 		}

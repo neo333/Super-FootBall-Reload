@@ -65,8 +65,11 @@ private:
 	virtual void Main_Script(void){
 
 	}
+
+	bool constraint_area_active;
+	MyRect constraint_area;
 public:
-	Sprite(void):frame(0),anim(false),face(DIR_DOWN){
+	Sprite(void):frame(0),anim(false),face(DIR_DOWN),constraint_area_active(false){
 		this->Set_Delay_Frames(130);
 		this->box_collide.resize(4);
 	}
@@ -207,6 +210,18 @@ public:
 	float Distance_Sprite(const Sprite& oth) const{
 		MyVector dist_point=this->Get_Baricentro()-oth.Get_Baricentro();
 		return dist_point.Module();
+	}
+
+	/*Ritorna lo stato dell'area di costrizione dello sprite*/
+	bool Get_Constraint_Area(MyRect& rparam) const{
+		rparam=this->constraint_area;
+		return this->constraint_area_active;
+	}
+
+	/*Setta lo stesto dell'area di costrizione dello sprite*/
+	void Set_Constraint_Area(const MyRect& rparam, bool bparam){
+		this->constraint_area=rparam;
+		this->constraint_area_active=bparam;
 	}
 };
 

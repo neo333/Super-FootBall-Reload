@@ -64,6 +64,7 @@ void Level0::Load(void){
 
 	curs=this->Insert_Sprite();
 	curs->Load(pg_filename);
+	curs->Set_Constraint_Area(MyRect(0,0,770,600),true);
 	this->Set_Sprite_Player(curs);
 
 
