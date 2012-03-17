@@ -11,7 +11,8 @@ class Game;
 
 enum TYPE_SPRITE{
 	SP_DEFAULT,
-	SP_BALL
+	SP_BALL,
+	SP_ENEMY
 };
 
 class Mondo{

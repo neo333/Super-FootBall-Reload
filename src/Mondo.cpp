@@ -1,5 +1,6 @@
 #include "Mondo.h"
 #include "Sp_Ball.h"
+#include "Sp_Enemy.h"
 
 OutVideo& operator<<(OutVideo& screen, Mondo& obj){
 	unsigned int size=obj.objects.size();
@@ -30,6 +31,9 @@ Sprite* Mondo::Insert_Sprite(const TYPE_SPRITE& typ){
 		break;
 	case SP_BALL:
 		pTemp=new Sp_Ball;
+		break;
+	case SP_ENEMY:
+		pTemp=new Sp_Enemy((Level0*)(this));
 		break;
 	default:
 		//TODO: fare errore!!! critico!!

@@ -10,6 +10,8 @@ static const std::string pg_filename("Data/images/sp_p.bin");
 static const std::string ball_filename("Data/images/sp_ball.bin");
 static const Sint16 X_PLAYER_START=50;
 static const Sint16 Y_PLAYER_START=250;
+static const Sint16 X_ENEMY_START=700;
+static const Sint16 Y_ENEMY_START=250;
 
 void Level0::Load(void){
 	Sprite* curs;
@@ -62,11 +64,17 @@ void Level0::Load(void){
 		curs->SetX(760);
 	}
 
+	//pg
 	curs=this->Insert_Sprite();
 	curs->Load(pg_filename);
 	curs->Set_Constraint_Area(MyRect(0,0,770,600),true);
 	this->Set_Sprite_Player(curs);
 
+	//nemico
+	curs=this->Insert_Sprite(SP_ENEMY);
+	curs->Load(pg_filename);
+	curs->Set_Constraint_Area(MyRect(0,0,770,600),true);
+	this->sprite_enemy=curs;
 
 	//inizializza le posizioni
 	this->Set_PositionSTART_Players();
@@ -96,6 +104,11 @@ void Level0::Set_PositionSTART_Players(void){
 		this->Get_Sprite_Player()->SetX(X_PLAYER_START);
 		this->Get_Sprite_Player()->SetY(Y_PLAYER_START);
 		this->Get_Sprite_Player()->Set_Face(DIR_RIGHT);
+	}
+	if(this->sprite_enemy){
+		this->sprite_enemy->SetX(X_ENEMY_START);
+		this->sprite_enemy->SetY(Y_ENEMY_START);
+		this->sprite_enemy->Set_Face(DIR_LEFT);
 	}
 }
 
