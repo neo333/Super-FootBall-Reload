@@ -7,6 +7,7 @@
 
 static const std::string wall_filename("Data/images/sp_wall.bin");
 static const std::string pg_filename("Data/images/sp_p.bin");
+static const std::string enemy_filename("Data/images/sp_e.bin");
 static const std::string ball_filename("Data/images/sp_ball.bin");
 static const Sint16 X_PLAYER_START=50;
 static const Sint16 Y_PLAYER_START=250;
@@ -72,7 +73,7 @@ void Level0::Load(void){
 
 	//nemico
 	curs=this->Insert_Sprite(SP_ENEMY);
-	curs->Load(pg_filename);
+	curs->Load(enemy_filename);
 	curs->Set_Constraint_Area(MyRect(0,0,770,600),true);
 	this->sprite_enemy=curs;
 
