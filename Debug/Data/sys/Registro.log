@@ -1,0 +1,473 @@
+
+               SUPER FOOTBALL RELOAD
+                      by Neo333 (alias Biagio Festa)
+                      Versione: 2.0
+
+    REGISTRO DI SISTEMA:
+	 > Avviso ID: 0xLOPZ_FILE
+		Caricamento opzioni di gioco in corso ...
+		File: ../src/Opzioni.cpp
+		Line: ˜ƒ®¿”„®¿
+	 > Avviso ID: 0xLYOPZ_FILE
+		Opzioni di gioco caricate con successo!
+		File: ../src/Opzioni.cpp
+		Line:  ƒ®¿”„®¿
+	 > Avviso ID: 0xYINIT_LIB
+		Librerie di sistema inizializzate correttamente!
+		File: ../src/Applicazione.cpp
+		Line: ”ƒ®¿ø„®¿
+	 > Avviso ID: 0xLMAIN_WIN
+		Inizializzazione Finestra Grafica in corso ...
+		File: ../src/OutVideo.cpp
+		Line: 
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/backbuffer.bin'
+		File: ../src/HardDisk.cpp
+		Line: x‚®¿p‚®¿
+	 > Avviso ID: 2xINFCACHES_IMG
+		Aggiunta di una cache al system_data!
+		File: ../src/HardDisk.cpp
+		Line: ¼‚®¿ì©	
+	 > Avviso ID: 0xYMAIN_WIN
+		Inizializzazione Finestra Grafica effettuata con successo!
+		File: ../src/OutVideo.cpp
+		Line: „ƒ®¿ˆƒ®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/logo1.bin'
+		File: ../src/HardDisk.cpp
+		Line: X‚®¿P‚®¿
+	 > Avviso ID: 2xINFCACHES_IMG
+		Aggiunta di una cache al system_data!
+		File: ../src/HardDisk.cpp
+		Line: œ‚®¿ ð¬	
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/logo2.bin'
+		File: ../src/HardDisk.cpp
+		Line: X‚®¿P‚®¿
+	 > Avviso ID: 2xINFCACHES_IMG
+		Aggiunta di una cache al system_data!
+		File: ../src/HardDisk.cpp
+		Line: œ‚®¿ë¬	
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/lg3.bin'
+		File: ../src/HardDisk.cpp
+		Line: X‚®¿P‚®¿
+	 > Avviso ID: 2xINFCACHES_IMG
+		Aggiunta di una cache al system_data!
+		File: ../src/HardDisk.cpp
+		Line: œ‚®¿˜½«	
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/m_p.bin'
+		File: ../src/HardDisk.cpp
+		Line: X‚®¿P‚®¿
+	 > Avviso ID: 2xINFCACHES_IMG
+		Aggiunta di una cache al system_data!
+		File: ../src/HardDisk.cpp
+		Line: œ‚®¿ó¬	
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/p_t1.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿
+	 > Avviso ID: 2xINFCACHES_IMG
+		Aggiunta di una cache al system_data!
+		File: ../src/HardDisk.cpp
+		Line: L‚®¿ðï¬	
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/p_t1.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/p_t1.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿
+	 > Avviso ID: 2xINFLOAD_SND
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/sounds/bt_cl.bin'
+		File: ../src/HardDisk.cpp
+		Line: `í¬	P‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/p_t1.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/p_t1.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/p_t1.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/p_t1.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/p_t1.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/p_t1.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFCACHES_IMG
+		Aggiunta di una cache al system_data!
+		File: ../src/HardDisk.cpp
+		Line: \‚®¿ë¬	
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_wall.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_p.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFCACHES_IMG
+		Aggiunta di una cache al system_data!
+		File: ../src/HardDisk.cpp
+		Line: \‚®¿0Ð°	
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_e.bin'
+		File: ../src/HardDisk.cpp
+		Line: ‚®¿‚®¿
+	 > Avviso ID: 2xINFCACHES_IMG
+		Aggiunta di una cache al system_data!
+		File: ../src/HardDisk.cpp
+		Line: \‚®¿ÈÐ°	
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_ball.bin'
+		File: ../src/HardDisk.cpp
+		Line: ¸‚®¿°‚®¿
+	 > Avviso ID: 2xINFCACHES_IMG
+		Aggiunta di una cache al system_data!
+		File: ../src/HardDisk.cpp
+		Line: ü‚®¿ÀÈ°	
+	 > Avviso ID: 2xINFLOAD_IMG
+		Accesso all'Hard Disk del system!
+		Richiesta della risorsa: 'Data/images/sp_ball.bin'
+		File: ../src/HardDisk.cpp
+		Line: ¸‚®¿°‚®¿
+	 > Avviso ID: 0xCLMAIN_WIN
+		Finestra Grafica Terminata.
+		File: ../src/OutVideo.cpp
+		Line: ”ƒ®¿<„®¿
+	 > Avviso ID: 0xYCLOSE_LIB
+		Librerie di sistema terminate correttamente!
+		File: ../src/Applicazione.cpp
+		Line: ”ƒ®¿<„®¿
+	 > Avviso ID: 0xYCLOSE_APP
+		Applicazione conclusa con successo!
+		File: ../src/Applicazione.cpp
+		Line: èƒ®¿<„®¿

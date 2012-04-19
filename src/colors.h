@@ -1,7 +1,7 @@
 #ifndef COLORS_SFR
 #define COLORS_SFR
 
-#include <SDL\SDL.h>
+#include <SDL/SDL.h>
 
 struct Colors{
 	Uint8 c_red;

@@ -2,7 +2,7 @@
 #include "global.h"
 #include <fstream>
 #include "Bcol.h"
-#include <SDL\SDL_collide.h>
+#include "SDL_collide.h"
 
 #ifdef _DEBUG
 #include <iostream>
@@ -36,7 +36,7 @@ void Sprite::Process(void){
 		yc=2*dims_frames::hc;
 		break;
 	default:
-		//TODO: fare errore (non può verificarsi questa possibilità!)
+		//TODO: fare errore (non puï¿½ verificarsi questa possibilitï¿½!)
 		break;
 	}
 	if(this->anim){
@@ -83,7 +83,7 @@ void Sprite::Load_BoxCollide(const std::string& filename){
 	std::ifstream file;
 	std::vector<MyRect> list;
 	MyRect temp_ins;
-	file.open(filename_adjust, std::ios::binary);
+	file.open(filename_adjust.c_str(), std::ios::binary);
 	if(file.is_open()==false){
 		return;
 	}

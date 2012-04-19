@@ -1,5 +1,5 @@
 #include "Testo.h"
-#include <SDL\SDL_ttf.h>
+#include <SDL/SDL_ttf.h>
 #include "global.h"
 
 void Testo::SetString(const std::string& str){

@@ -1,11 +1,11 @@
 #ifndef _HARD_DISK_SFR
 #define _HARD_DISK_SFR
 
-#include <SDL\SDL.h>
+#include <SDL/SDL.h>
 #include <map>
 #include <string>
 #include "MySurface.h"
-#include <SDL\SDL_mixer.h>
+#include <SDL/SDL_mixer.h>
 
 class HardDisk{
 private:

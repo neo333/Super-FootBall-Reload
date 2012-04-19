@@ -1,4 +1,4 @@
-#include <SDL\SDL_collide.h>
+#include "SDL_collide.h"
 #include "Bgui.h"
 #include "global.h"
 
@@ -104,7 +104,7 @@ MySurface* Bgui::GetSurface_AtPos(const Sint16& x_pix, const Sint16& y_pix, int&
 	return NULL;
 }
 
-bool Bgui::GetColorPixel(Colors& color_param, const Sint16& x_pix, const Sint16 y_pix){
+bool Bgui::GetColorPixel(Colors& color_param, const Sint16& x_pix, const Sint16& y_pix){
 	Sint16 x_rel=x_pix + this->GetX();
 	Sint16 y_rel=y_pix + this->GetY();
 

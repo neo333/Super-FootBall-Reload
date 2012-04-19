@@ -1,0 +1,29 @@
+
+               SUPER FOOTBALL RELOAD
+                      by Neo333 (alias Biagio Festa)
+                      Versione: 2.0
+
+    REGISTRO DI SISTEMA:
+	 > Avviso ID: 0xLOPZ_FILE
+		Caricamento opzioni di gioco in corso ...
+	 > Avviso ID: 0xLYOPZ_FILE
+		Opzioni di gioco caricate con successo!
+	 > Errore Critico ID: 1xNINIT_LIB
+		Impossibile inizializzare le librerie di sistema.
+		Contattare l'amministratore del software
+	 > Avviso ID: 0xLMAIN_WIN
+		Inizializzazione Finestra Grafica in corso ...
+	 > Errore Critico ID: 1xNTLOAD_IMG
+		Impossibile caricare la risorsa richiesta: 'Data/images/backbuffer.bin'
+		Una nuova installazione potrebbe risolvere il problema!
+	 > Avviso ID: 0xYMAIN_WIN
+		Inizializzazione Finestra Grafica effettuata con successo!
+	 > Errore Critico ID: 1xELOAD_FNT
+		Impossibile caricare la risorsa richiesta: 'Data/fonts/redrocketcond.ttf'
+		Una nuova installazione potrebbe risolvere il problema!
+	 > Avviso ID: 0xCLMAIN_WIN
+		Finestra Grafica Terminata.
+	 > Avviso ID: 0xYCLOSE_LIB
+		Librerie di sistema terminate correttamente!
+	 > Avviso ID: 0xECLOSE_APP
+		Applicazione terminata con errori!

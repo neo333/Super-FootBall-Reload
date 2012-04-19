@@ -1,6 +1,6 @@
 #include "Bcol.h"
 #include <fstream>
-#include <SDL\SDL_image.h>
+#include <SDL/SDL_image.h>
 
 bool Bcol::Converted_IMAGE(const std::string& file_name_input, const std::string& file_name_output){
 	if(file_name_input.size()==0){
@@ -31,7 +31,7 @@ bool Bcol::Converted_IMAGE(const std::string& file_name_input, const std::string
 
 	std::ofstream file_out;
 	std::vector<MyRect>::iterator it;
-	file_out.open(file_name_output, std::ios::binary);
+	file_out.open(file_name_output.c_str(), std::ios::binary);
 	if(file_out.is_open()==false){
 		return false;
 	}
@@ -64,7 +64,7 @@ void Bcol::Make_Rect(const int& x,const int& y, std::vector<MyRect>& list, MySur
 	bool exit=false;
 	for(temp=x;!exit && temp < w_image;temp++){
 		if(image.GetColorPixel(col_image,temp,y)==false){
-			/*TODO: lanciare errore! qualcosa è andato storto con la funzione GetColorPixel*/
+			/*TODO: lanciare errore! qualcosa ï¿½ andato storto con la funzione GetColorPixel*/
 			return;
 		}
 		if(col_image==typ_colors::Default_Trasparent){
@@ -76,7 +76,7 @@ void Bcol::Make_Rect(const int& x,const int& y, std::vector<MyRect>& list, MySur
 	exit=false;
 	for(temp=y;!exit && temp < h_image;temp++){
 		if(image.GetColorPixel(col_image,x,temp)==false){
-			/*TODO: lanciare errore! qualcosa è andato storto con la funzione GetColorPixel*/
+			/*TODO: lanciare errore! qualcosa ï¿½ andato storto con la funzione GetColorPixel*/
 			return;
 		}
 		if(col_image==typ_colors::Default_Trasparent){

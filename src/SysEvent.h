@@ -1,7 +1,7 @@
 #ifndef _SYSEVENT_SFR
 #define _SYSEVENT_SFR
 
-#include <SDL\SDL.h>
+#include <SDL/SDL.h>
 
 namespace type_event{
 	enum mess_event{

@@ -12,7 +12,7 @@
 
 char* DeCryp(const std::string& filename, long& m_size){
 	FILE* pFile=NULL;
-	fopen_s(&pFile,filename.c_str(),"rb");
+	pFile=fopen(filename.c_str(),"rb");
 	if(pFile==NULL){
 		return NULL;
 	}
@@ -36,11 +36,11 @@ char* DeCryp(const std::string& filename, long& m_size){
 
 bool Cryp(const std::string& filename_src, const std::string& filename_dest){
 	FILE* pFile_src=NULL, *pFile_dest;
-	fopen_s(&pFile_src,filename_src.c_str(),"rb");
+	pFile_src=fopen(filename_src.c_str(),"rb");
 	if(pFile_src==NULL){
 		return false;
 	}
-	fopen_s(&pFile_dest,filename_dest.c_str(),"wb");
+	pFile_dest=fopen(filename_dest.c_str(),"wb");
 	if(pFile_dest==NULL){
 		fclose(pFile_src);
 		pFile_src=NULL;

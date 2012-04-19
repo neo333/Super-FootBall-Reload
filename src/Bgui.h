@@ -2,11 +2,11 @@
 #define _BGUI_SFR
 
 /*			BGUI
-	Astrazione di un'entità interfaccia ad un elemento grafico
+	Astrazione di un'entitï¿½ interfaccia ad un elemento grafico
 */
 
 #include "MySurface.h"
-#include <SDL\SDL.h>
+#include <SDL/SDL.h>
 #include <vector>
 #include "OutVideo.h"
 #include "colors.h"
@@ -58,7 +58,7 @@ public:
 	/*OutPut a video dell'elemento grafico*/
 	friend OutVideo& operator<<(OutVideo&, Bgui&);
 
-	/*Ritorna TRUE se la risorsa grafica è vuota (priva di componenti)*/
+	/*Ritorna TRUE se la risorsa grafica ï¿½ vuota (priva di componenti)*/
 	bool Empty(void) const{
 		if(this->int_components.size() == 0){
 			return true;
@@ -66,7 +66,7 @@ public:
 		return false;
 	}
 
-	/*Accesso alle surface dei componenti. Nel caso di accesso per un indice inesistente, il vettore componenti verrà ridimensionato*/
+	/*Accesso alle surface dei componenti. Nel caso di accesso per un indice inesistente, il vettore componenti verrï¿½ ridimensionato*/
 	MySurface& GetSurface_Component(const unsigned int& index){
 		if(index + 1 <= this->int_components.size()){
 			return this->int_components[index].surf_component;
@@ -86,10 +86,10 @@ public:
 
 	/*Ritorna il Colore del pixel (rispetto alla Bgui) specificato. Ritorna false se non vengono
 	trovati componenti in quella locazione.*/
-	bool GetColorPixel(Colors&, const Sint16&, const Sint16);
+	bool GetColorPixel(Colors&, const Sint16&, const Sint16&);
 
 	/*Ritorna il puntatore la MySurface del componente che si trova alle coordinate (da schermo) indicate
-	Inoltre il 3 parametro è output e indica l'indice dell'array del componente della Bgui
+	Inoltre il 3 parametro ï¿½ output e indica l'indice dell'array del componente della Bgui
 	Se non esiste viene ritornato un valore NULLO*/
 	MySurface* GetSurface_AtPos(const Sint16&, const Sint16&, int&);
 };

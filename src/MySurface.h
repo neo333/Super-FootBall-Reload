@@ -1,7 +1,7 @@
 #ifndef _MYSURFACE_SFR
 #define _MYSURFACE_SFR
 
-#include <SDL\SDL.h>
+#include <SDL/SDL.h>
 #include <string>
 #include "colors.h"
 
@@ -33,7 +33,7 @@ public:
 	}
 
 	/*Operatore di Assegnazione di Default. Assegna copiando la surface originale*/
-	MySurface& MySurface::operator=(const MySurface&);
+	MySurface& operator=(const MySurface&);
 
 	/*Operatore di Assegnazione con Surface. Assegna la surface specificata (NB. Non crea una copia di tale)*/
 	MySurface& operator=(SDL_Surface* oth){
@@ -57,7 +57,7 @@ public:
 		}
 	}
 
-	/*Ritorna FALSE se la surface è vuota*/
+	/*Ritorna FALSE se la surface ï¿½ vuota*/
 	bool IsLoaded(void) const{
 		if(this->psurface){
 			return true;
@@ -77,7 +77,7 @@ public:
 	/*Operatore di Casting in string c++*/
 	operator std::string(void) const{
 		char buffer[20];
-		_itoa_s((int)(this->psurface),buffer,20,10);
+		//itoa((int)(this->psurface),buffer,10);	//TODO: rifare la funzione per linux!
 		std::string rts=buffer;
 		return rts;
 	}
@@ -93,7 +93,7 @@ public:
 	/*Ritorna il colore di un determinato Pixel della surface. In caso di errore ritorna FALSE!*/
 	bool GetColorPixel(Colors&, const Sint16&, const Sint16&);
 
-	/*Ritorna la larghezza dell'immagine. Se la surface non è caricata ritorna 0*/
+	/*Ritorna la larghezza dell'immagine. Se la surface non ï¿½ caricata ritorna 0*/
 	int Get_WSurface(void) const{
 		if(this->psurface){
 			return this->psurface->w;
@@ -101,7 +101,7 @@ public:
 		return 0;
 	}
 
-	/*Ritorna l'altezza dell'immagine. Se la surface non è caricata ritorna 0*/
+	/*Ritorna l'altezza dell'immagine. Se la surface non ï¿½ caricata ritorna 0*/
 	int Get_HSurface(void) const{
 		if(this->psurface){
 			return this->psurface->h;

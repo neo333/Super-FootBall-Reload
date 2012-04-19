@@ -1,6 +1,6 @@
 #include "HardDisk.h"
 #include "global.h"
-#include <SDL\SDL_image.h>
+#include <SDL/SDL_image.h>
 #include "cryp_lib.h"
 
 #define __MAX_CACHES_SURFACE__ 50

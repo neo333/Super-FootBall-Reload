@@ -1,5 +1,5 @@
 #include "OutSound.h"
-#include <SDL\SDL_mixer.h>
+#include <SDL/SDL_mixer.h>
 
 OutSound::OutSound(void):loaded(false){
 

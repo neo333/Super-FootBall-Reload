@@ -63,6 +63,9 @@ void Applicazione::Init_All(void){
 		if(this->Init_Libraries()==false){
 			OutRegistro(Errore_Form("1xNINIT_LIB","Impossibile inizializzare le librerie di sistema.\n"
 												  "Contattare l'amministratore del software"));
+#ifdef _DEBUG
+			OutRegistro(Errore_Form("1xBOHG",SDL_GetError()));
+#endif
 			this->force_exit=1;
 		}
 		if(this->main_screen.Open_MainWin(this->opz_app)==false){

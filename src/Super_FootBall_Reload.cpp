@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include "Applicazione.h"
-#include <SDL\SDL.h>
+#include <SDL/SDL.h>
 
 #ifdef WIN32
 #include <Windows.h>

@@ -24,7 +24,7 @@ void FileLog::CloseStream(void){
 
 bool FileLog::OpenStream(void){
 	if(this->reg_filename.size() > 0){
-		this->pFile.open(this->reg_filename);
+		this->pFile.open(this->reg_filename.c_str());
 		if(this->pFile.fail()){
 			return false;
 		}
@@ -86,7 +86,7 @@ void FileLog::_OutMessage_Pox(const Errore_Form& input, const char* file_p, cons
 	*this << input;
 #ifdef _DEBUG
 	char buffer_temp[10];
-	_itoa_s(line_p,buffer_temp,10,10);
+	//_itoa_s(line_p,buffer_temp,10,10);	//TODO: fare funzione anche per linux!
 	this->Write_String("\t\tFile: ");
 	this->Write_String(file_p);
 	this->Write_String("\n\t\tLine: ");

@@ -1,5 +1,5 @@
 #include "OutVideo.h"
-#include <SDL\SDL.h>
+#include <SDL/SDL.h>
 #include "global.h"
 #include <cassert>
 

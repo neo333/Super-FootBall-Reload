@@ -1,7 +1,7 @@
 #ifndef _MYTIMER_SFR
 #define _MYTIMER_SFR
 
-#include <SDL\SDL.h>
+#include <SDL/SDL.h>
 
 class MyTimer{
 private:

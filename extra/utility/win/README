@@ -1,0 +1,16 @@
+		
+		DeECRYP
+			by Biagio Festa
+			
+	Utility progettata per l'applicativo 'Super FootBall Reload'!
+	
+1) Copiare l'eseguibile nella cartella delle risorse desiderate.
+2) Creare una cartella affianco all'eseguibile nominata 'bin'
+3) Avviare l'eseguibile
+
+Tutti i files presenti nella stessa cartella dell'eseguibile verranno
+automaticamente cifrati e salvati nella cartella bin!
+Le chiavi di cifratura sono presenti esclusivamente nell'applicazione
+'SFR'.
+
+		

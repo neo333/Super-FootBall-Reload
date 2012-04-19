@@ -22,7 +22,7 @@ bool OpzioniGame::Load_to_file(const std::string& filename){
 		return false;
 	}
 	FILE* pfile=NULL;
-	fopen_s(&pfile,filename.c_str(),"rb");
+	pfile=fopen(filename.c_str(),"rb");
 	if(pfile==NULL){
 		return false;
 	}
@@ -36,7 +36,7 @@ bool OpzioniGame::Load_to_file(const std::string& filename){
 void OpzioniGame::Save_to_file(const std::string& filename) const{
 	OutRegistro(Errore_Form("0xSOPZ_FILE","Salvataggio opzioni di gioco in corso ..."));
 	FILE* pfile=NULL;
-	fopen_s(&pfile,filename.c_str(),"wb");
+	pfile=fopen(filename.c_str(),"wb");
 	if(pfile!=NULL){
 		fwrite(this,sizeof(OpzioniGame),1,pfile);
 		fclose(pfile);

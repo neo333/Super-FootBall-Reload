@@ -3,10 +3,10 @@
 
 /*
 		MyFont
-	Questa classe rappresenta un'astrazione del già noto tipo TTF_Font della libreria SDL
+	Questa classe rappresenta un'astrazione del giï¿½ noto tipo TTF_Font della libreria SDL
 */
 
-#include <SDL\SDL_ttf.h>
+#include <SDL/SDL_ttf.h>
 #include <string>
 
 class MyFont{

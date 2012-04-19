@@ -1,5 +1,5 @@
 #include "Picture.h"
-#include <SDL\SDL_rotozoom.h>
+#include <SDL/SDL_rotozoom.h>
 
 Picture::Picture(void):angle_curr(0), zoom_curr(0), alpha_curr(255), alpha_process(false){
 

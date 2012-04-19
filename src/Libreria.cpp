@@ -1,8 +1,8 @@
 #include "Libreria.h"
-#include <SDL\SDL.h>
-#include <sdl\SDL_image.h>
-#include <SDL\SDL_ttf.h>
-#include <SDL\SDL_mixer.h>
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
+#include <SDL/SDL_ttf.h>
+#include <SDL/SDL_mixer.h>
 
 Libreria::Libreria(const LIB_TYPE& lib_param):loaded(false), typ_library(lib_param){
 

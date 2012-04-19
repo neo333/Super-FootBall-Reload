@@ -1,7 +1,7 @@
 #ifndef _MYRECT_SFR
 #define _MYRECT_SFR
 
-#include <SDL\SDL.h>
+#include <SDL/SDL.h>
 #include "OutVideo.h"
 
 class MyRect{

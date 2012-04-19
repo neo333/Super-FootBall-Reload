@@ -1,7 +1,7 @@
 #ifndef _MYVECTOR_SFR
 #define _MYVECTOR_SFR
 
-#include <SDL\SDL.h>
+#include <SDL/SDL.h>
 #include "OutVideo.h"
 #include "colors.h"
 #include <cmath>

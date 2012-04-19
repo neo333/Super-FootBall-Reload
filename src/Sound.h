@@ -5,7 +5,7 @@
 	Questa classe rappresenta un'astrazione del tipo Mix_Chunk definito nella libreria SDL_mix
 */
 
-#include <SDL\SDL_mixer.h>
+#include <SDL/SDL_mixer.h>
 #include <string>
 
 class Sound{
